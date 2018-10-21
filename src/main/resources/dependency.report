@@ -1,0 +1,2228 @@
+
+------------------------------------------------------------
+Project :devhandler-assembly
+------------------------------------------------------------
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+cygwin
+\--- com.dieboldnixdorf.txm.server-core:cygwin -> 2.0.1-Build.3
+
+databaseLayer
+\--- com.dieboldnixdorf.txm.server-core:database-layer -> 2.0.1-Build.3
+
+default - Configuration for default artifacts.
+No dependencies
+
+deploy - Classpath for deployable modules, not transitive.
+No dependencies
+
+dist
+No dependencies
+
+earlib - Classpath for module dependencies.
+No dependencies
+
+includedDist
++--- com.dieboldnixdorf.txm.server-addon:docker-image-creation -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:installjboss -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:installwas -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:installwlp -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:simulator-client -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:simulator-scripts -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.tools:workbench -> 2.0.1-Build.2
++--- com.dieboldnixdorf.txm.tools:chameleon -> 2.0.1-Build.2
++--- com.dieboldnixdorf.txm.sc-device:sdmclient-atmcc -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.sc-device:sdmclient-atmcc-application -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.sc-device:sdmclient-wscc-application -> 2.0.1-Build.3
+\--- com.dieboldnixdorf.txm.wscc:sdmclient-wscc -> 2.0.1-Build.3
+
+nebulaRecommenderBom
+\--- com.dieboldnixdorf.txm.delivery:delivery:2.0.1-Build.8
+
+ocmWarLib
++--- org.primefaces:primefaces -> 6.2.5
++--- org.primefaces.extensions:primefaces-extensions -> 6.2.4
+\--- org.omnifaces:omnifaces -> 2.6.9.1
+
+sccWarLib
+No dependencies
+
+serverRuntime
++--- com.dieboldnixdorf.txm.server-core:ear-template -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-addon:dockerconnector-ejb -> 2.0.1-Build.3
+|    +--- com.google.code.gson:gson:2.8.2
+|    +--- org.apache.httpcomponents:httpclient:4.5.4
+|    |    +--- org.apache.httpcomponents:httpcore:4.4.7 -> 4.4.8
+|    |    +--- commons-logging:commons-logging:1.2
+|    |    \--- commons-codec:commons-codec:1.10 -> 1.11
+|    +--- org.apache.httpcomponents:httpcore:4.4.8
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:logging-api:2.0.1-Build.3
+|    |    |    |    +--- org.apache.logging.log4j:log4j-api:2.9.1
+|    |    |    |    +--- org.apache.logging.log4j:log4j-core:2.9.1
+|    |    |    |    |    \--- org.apache.logging.log4j:log4j-api:2.9.1
+|    |    |    |    +--- com.esotericsoftware:kryo:4.0.1
+|    |    |    |    |    +--- com.esotericsoftware:reflectasm:1.11.3
+|    |    |    |    |    |    \--- org.ow2.asm:asm:5.0.4 -> 5.2
+|    |    |    |    |    +--- com.esotericsoftware:minlog:1.3.0
+|    |    |    |    |    \--- org.objenesis:objenesis:2.5.1 -> 2.6
+|    |    |    |    +--- net.sourceforge.jeval:jeval:0.9.4
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    |    |    +--- commons-codec:commons-codec:1.11
+|    |    |    |    +--- commons-io:commons-io:2.6
+|    |    |    |    +--- commons-jxpath:commons-jxpath:1.3
+|    |    |    |    +--- org.apache.commons:commons-text:1.2
+|    |    |    |    |    \--- org.apache.commons:commons-lang3:3.7
+|    |    |    |    +--- org.aspectj:aspectjrt:1.8.13
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5
+|    |    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0 -> 2.9.5
+|    |    |    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.9.5
+|    |    |    |    \--- com.lmax:disruptor:3.3.7
+|    |    |    +--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- com.netflix.hystrix:hystrix-core:1.5.13
+|    |    |    +--- org.slf4j:slf4j-api:1.7.0 -> 1.7.25
+|    |    |    +--- com.netflix.archaius:archaius-core:0.4.1
+|    |    |    |    +--- commons-configuration:commons-configuration:1.8 -> 1.10
+|    |    |    |    |    +--- commons-lang:commons-lang:2.6
+|    |    |    |    |    \--- commons-logging:commons-logging:1.1.1 -> 1.2
+|    |    |    |    \--- org.slf4j:slf4j-api:1.6.4 -> 1.7.25
+|    |    |    +--- io.reactivex:rxjava:1.2.0 -> 1.3.4
+|    |    |    \--- org.hdrhistogram:HdrHistogram:2.1.9
+|    |    +--- com.dieboldnixdorf.txm.server-core:jdbc-aspects:2.0.1-Build.3
+|    |    |    \--- org.aspectj:aspectjrt:1.8.13
+|    |    +--- io.vavr:vavr:0.9.1
+|    |    |    \--- io.vavr:vavr-match:0.9.1
+|    |    +--- io.reactivex:rxjava:1.3.4
+|    |    +--- io.dropwizard.metrics:metrics-core:4.0.0
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    +--- com.netflix.hystrix:hystrix-servo-metrics-publisher:1.5.13
+|    |    |    +--- com.netflix.hystrix:hystrix-core:1.5.13 (*)
+|    |    |    \--- com.netflix.servo:servo-core:0.10.1
+|    |    |         +--- org.slf4j:slf4j-api:1.7.12 -> 1.7.25
+|    |    |         +--- com.google.guava:guava:16.0.1 -> 23.6-jre
+|    |    |         |    +--- com.google.code.findbugs:jsr305:1.3.9 -> 3.0.1
+|    |    |         |    +--- org.checkerframework:checker-compat-qual:2.0.0
+|    |    |         |    +--- com.google.errorprone:error_prone_annotations:2.1.3
+|    |    |         |    +--- com.google.j2objc:j2objc-annotations:1.1
+|    |    |         |    \--- org.codehaus.mojo:animal-sniffer-annotations:1.14
+|    |    |         +--- com.google.code.findbugs:annotations:2.0.0
+|    |    |         \--- com.netflix.servo:servo-internal:0.10.1
+|    |    |              +--- org.slf4j:slf4j-api:1.7.12 -> 1.7.25
+|    |    |              +--- com.google.guava:guava:16.0.1 -> 23.6-jre (*)
+|    |    |              \--- com.google.code.findbugs:annotations:2.0.0
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    +--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    +--- de.javakaffee:kryo-serializers:0.42
+|    |    |    \--- com.esotericsoftware:kryo:4.0.0 -> 4.0.1 (*)
+|    |    +--- org.yaml:snakeyaml:1.19
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- commons-jxpath:commons-jxpath:1.3
+|    |    +--- commons-io:commons-io:2.6
+|    |    +--- commons-codec:commons-codec:1.11
+|    |    +--- org.dom4j:dom4j:2.1.0
+|    |    |    \--- jaxen:jaxen:1.1.6
+|    |    +--- commons-beanutils:commons-beanutils:1.9.3
+|    |    |    +--- commons-logging:commons-logging:1.2
+|    |    |    \--- commons-collections:commons-collections:3.2.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:parameterservice-ejb:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:cardhandling-ejb:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-addon:elasticgroups-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:texttemplates-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:texttemplates-ddl:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-addon:elasticgroups-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-addon:elasticgroups-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.google.code.gson:gson:2.8.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:messageservice-ejb:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.lambdaworks:scrypt:1.4.0
+|    |    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    |    +--- commons-codec:commons-codec:1.11
+|    |    |    +--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    |    +--- commons-io:commons-io:2.6
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ddl:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ddl:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-dml:2.0.1-Build.3
+|    |    |         \--- com.dieboldnixdorf.txm.server-core:server-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-addon:elasticgroups-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-addon:dockerconnector-dml:2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.server-addon:elasticgroups-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-addon:dockerconnector-dml -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-addon:dockerconnectortask-ejb -> 2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-addon:dockerconnector-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:essentials -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:jdbc-aspects:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-dal:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4
+|    |    |    +--- org.primefaces:primefaces:6.2 -> 6.2.5
+|    |    |    +--- com.google.code.gson:gson:2.8.2
+|    |    |    \--- org.apache.commons:commons-lang3:3.5 -> 3.7
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-dal:2.0.1-Build.3 (*)
+|    |    |    \--- org.apache.commons:commons-lang3:3.7
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3
+|    |    |    +--- org.primefaces:primefaces:6.2.5
+|    |    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    |    +--- com.ibm.icu:icu4j:61.1
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:uicomponents-ocm-wf:2.0.1-Build.3
+|    |    |    |    +--- org.primefaces:primefaces:6.2.5
+|    |    |    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    |    |    +--- com.ibm.icu:icu4j:61.1
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:primefacestheme-ocm-wf:2.0.1-Build.3
+|    |    |    |    +--- org.primefaces:primefaces:6.2.5
+|    |    |    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    |    |    +--- com.ibm.icu:icu4j:61.1
+|    |    |    |    \--- org.aspectj:aspectjrt:1.8.13
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:ocm-template:2.0.1-Build.3
+|    |    |    |    +--- org.aspectj:aspectjrt:1.8.13
+|    |    |    |    +--- com.google.code.gson:gson:2.8.2
+|    |    |    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:uicomponents-ocm-wf:2.0.1-Build.3 (*)
+|    |    |    +--- commons-io:commons-io:2.6
+|    |    |    +--- org.apache.commons:commons-text:1.2 (*)
+|    |    |    +--- org.apache.lucene:lucene-core:7.1.0
+|    |    |    +--- org.apache.lucene:lucene-analyzers-common:7.1.0
+|    |    |    |    \--- org.apache.lucene:lucene-core:7.1.0
+|    |    |    +--- org.apache.lucene:lucene-queryparser:7.1.0
+|    |    |    |    +--- org.apache.lucene:lucene-core:7.1.0
+|    |    |    |    +--- org.apache.lucene:lucene-queries:7.1.0
+|    |    |    |    \--- org.apache.lucene:lucene-sandbox:7.1.0
+|    |    |    +--- org.apache.lucene:lucene-highlighter:7.1.0
+|    |    |    |    +--- org.apache.lucene:lucene-analyzers-common:7.1.0 (*)
+|    |    |    |    +--- org.apache.lucene:lucene-core:7.1.0
+|    |    |    |    +--- org.apache.lucene:lucene-join:7.1.0
+|    |    |    |    +--- org.apache.lucene:lucene-memory:7.1.0
+|    |    |    |    \--- org.apache.lucene:lucene-queries:7.1.0
+|    |    |    +--- org.jsoup:jsoup:1.11.2
+|    |    |    \--- org.omnifaces:omnifaces:2.6.9.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:uicomponents-ocm-wf:2.0.1-Build.3 (*)
+|    |    \--- commons-jxpath:commons-jxpath:1.3
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:cardhandling-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:cardhandling-ocm-ejb:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:cardhandling-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:cardhandling-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:commandadmin-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:commandadmin-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:journalappender-ejb:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:parameterservice-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:lifecyclemanager-ejb:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:serverdiscovery-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-webapp:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- com.netflix.hystrix:hystrix-servo-metrics-publisher:1.5.13 (*)
+|    |    \--- com.netflix.hystrix:hystrix-metrics-event-stream:1.5.13
+|    +--- com.dieboldnixdorf.txm.server-core:monitoring-webapp:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    \--- org.apache.commons:commons-lang3:3.7
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:primefacestheme-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:onlinehelp-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    \--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- org.codehaus.groovy:groovy-all:2.4.12
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:taskscheduler-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:reprocess-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:reprocess-ddl:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:reprocess-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:reprocess-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:reprocess-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:reprocess-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:reprocess-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:reprocess-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- org.apache.poi:poi:3.17
+|    |    |    +--- commons-codec:commons-codec:1.10 -> 1.11
+|    |    |    \--- org.apache.commons:commons-collections4:4.1
+|    |    +--- org.apache.poi:poi-ooxml:3.17
+|    |    |    +--- org.apache.poi:poi:3.17 (*)
+|    |    |    +--- org.apache.poi:poi-ooxml-schemas:3.17
+|    |    |    |    \--- org.apache.xmlbeans:xmlbeans:2.6.0
+|    |    |    |         \--- stax:stax-api:1.0.1
+|    |    |    \--- com.github.virtuald:curvesapi:1.04
+|    |    +--- org.apache.xmlbeans:xmlbeans:2.6.0 (*)
+|    |    \--- org.apache.poi:poi-ooxml-schemas:3.17 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:internode-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:multiplexer-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-admin-ejb:2.0.1-Build.3
+|    |    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-admin-dml:2.0.1-Build.3
+|    |    |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-dml:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisph-dispatcher-ejb:2.0.1-Build.3
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    |    |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisph-dispatcher-dml:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisph-dml:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-multiplex:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |    |    |    +--- org.antlr:antlr4-runtime:4.7
+|    |    |    |    +--- io.netty:netty-all:4.1.17.Final
+|    |    |    |    +--- commons-io:commons-io:2.6
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-multiplex-rar:2.0.1-Build.3
+|    |    |    |         \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-multiplex:2.0.1-Build.3 (*)
+|    |    |    +--- commons-io:commons-io:2.6
+|    |    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    |    +--- org.apache.commons:commons-collections4:4.1
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:multiplexer-ddl:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    |    +--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    +--- commons-io:commons-io:2.6
+|    |    \--- com.dieboldnixdorf.txm.server-core:internode-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:internode-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:multiplexer-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:internode-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:internode-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:internode-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisph-dispatcher-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-multiplex:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:rafile:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:rafile-rar:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:rafile:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:messageservice-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:internode-ejb:2.0.1-Build.3 (*)
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    +--- org.apache.commons:commons-collections4:4.1
+|    |    \--- commons-io:commons-io:2.6
+|    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ddl:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:tracelog-collection-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- org.apache.commons:commons-lang3:3.7
+|    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:tracelog-collection-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    |    \--- commons-io:commons-io:2.6
+|    +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-wf:2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-dal:2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:importexport-ocm-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:ocm-template:2.0.1-Build.3 (*)
++--- project :devhandler-sample-dml
++--- com.dieboldnixdorf.txm.server-core:bin-import-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:bin-import-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:exchange-rate-import-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:rafile:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:exchange-rate-import-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:fee-channel-interceptor -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:fee-management2-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    +--- com.dieboldnixdorf.txm.server-core:fee-management2-ddl:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:fee-management2-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:fee-management2-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:fee-management2-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:fee-management2-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:fee-management2-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- org.apache.commons:commons-collections4:4.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.3
+|    |    |    |         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |         +--- io.netty:netty-all:4.1.17.Final
+|    |    |    |         +--- org.bouncycastle:bcprov-jdk15on:1.58
+|    |    |    |         +--- org.bouncycastle:bcpkix-jdk15on:1.58
+|    |    |    |         |    \--- org.bouncycastle:bcprov-jdk15on:1.58
+|    |    |    |         \--- org.apache.commons:commons-pool2:2.4.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:service-profiles-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:common-condition:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- org.dom4j:dom4j:2.1.0 (*)
+|    |    +--- commons-jxpath:commons-jxpath:1.3
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    \--- net.sourceforge.jeval:jeval:0.9.4
+|    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.3
+|    |    +--- commons-codec:commons-codec:1.11
+|    |    +--- commons-jxpath:commons-jxpath:1.3
+|    |    +--- commons-beanutils:commons-beanutils:1.9.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common-condition:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ddl:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:service-profiles-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    +--- commons-codec:commons-codec:1.11
+|    \--- org.apache.commons:commons-collections4:4.1
++--- com.dieboldnixdorf.txm.server-core:routing-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- org.apache.commons:commons-collections4:4.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:routing-dml:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:service-profiles-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:routing-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:service-profiles-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ocm-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:cardhandling-ocm-wf:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:reprocess-ocm-wf -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-crypt:crypt-dukpt-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:crypt-dukpt-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-crypt:crypt-dukpt-ejb:2.0.1-Build.2
+|              +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    +--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm:2.0.1-Build.2
+|              |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    |    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    |    +--- org.apache.commons:commons-pool2:2.4.3
+|              |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              |    |    \--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm-dml:2.0.1-Build.2
+|              |    +--- commons-io:commons-io:2.6
+|              |    +--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm-rar:2.0.1-Build.2
+|              |    |    \--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm:2.0.1-Build.2 (*)
+|              |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-ddl:2.0.1-Build.2
+|              |    \--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-dml:2.0.1-Build.2
+|              \--- com.dieboldnixdorf.txm.server-crypt:crypt-dukpt-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-crypt:crypt-zone-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:crypt-zone-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-crypt:crypt-zone-ejb:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-crypt:message-protection-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:message-protection-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-crypt:message-protection:2.0.1-Build.2
+|              +--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
+|              +--- org.bouncycastle:bcprov-jdk15on:1.58
+|              +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-crypt:eisconnector-hsm:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.server-crypt:message-protection-ddl:2.0.1-Build.2
+|              \--- com.dieboldnixdorf.txm.server-crypt:message-protection-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- org.apache.commons:commons-collections4:4.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ejb:2.0.1-Build.2
+|              +--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              \--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-crypt:keyservice-hsm-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-crypt:keyservice-hsm-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-crypt:keyservice-hsm:2.0.1-Build.2
+|              +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.server-crypt:keyservice-hsm-dml:2.0.1-Build.2
+|              \--- com.dieboldnixdorf.txm.server-crypt:keyservice-hsm-ddl:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-core:journal-cleanup-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:journal-cleanup-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:journal-export-ejb -> 2.0.1-Build.3
+|    +--- commons-net:commons-net:3.6
+|    +--- com.dieboldnixdorf.txm.server-core:rafile:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    +--- commons-io:commons-io:2.6
+|    +--- com.dieboldnixdorf.txm.server-core:journal-export-ddl:2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-core:journal-export-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:accounting-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:accountingperiod-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:accountingperiod-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:accountingperiod-ddl:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:accounting-dml:2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-core:accounting-ddl:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:accountingperiod-ejb -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-core:importexport-jobs-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:rafile:2.0.1-Build.3 (*)
+|    +--- commons-io:commons-io:2.6
+|    \--- com.dieboldnixdorf.txm.server-core:importexport-jobs-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-sb:crypt-terminal-importexport-ocm-ejb -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.esotericsoftware:kryo:4.0.1 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:iso-converter2:2.0.1-Build.1 -> 2.0.1-Build.3
+|         |    +--- org.codehaus.groovy:groovy-all:2.4.12
+|         |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-core:iso-converter2-dml:2.0.1-Build.3
+|         +--- commons-jxpath:commons-jxpath:1.3
+|         +--- com.dieboldnixdorf.txm.server-sb:sbtrx-casscounterchanged-ejb:2.0.1-Build.2
+|         |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:sbtrx-session-ejb:2.0.1-Build.2
+|         |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-dml:2.0.1-Build.2
+|         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ddl:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-core:simulator -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:simulator-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:simulator-base:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    +--- org.apache.logging.log4j:log4j-api:2.9.1
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:simulator-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:testing-base:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    \--- org.apache.logging.log4j:log4j-api:2.9.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:simulator-base:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:simulator-groovy:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:simulator-base:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    +--- org.codehaus.groovy:groovy-all:2.4.12
+|    |    \--- junit:junit:4.12
+|    |         \--- org.hamcrest:hamcrest-core:1.3
+|    \--- com.dieboldnixdorf.txm.server-core:simulator-webapp:2.0.1-Build.3
+|         +--- com.google.code.gson:gson:2.8.2
+|         +--- org.apache.httpcomponents:httpcore:4.4.8
+|         \--- com.dieboldnixdorf.txm.server-core:simulator-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- commons-io:commons-io:2.6
+|    +--- org.omnifaces:omnifaces:2.6.9.1
+|    +--- org.apache.poi:poi:3.17 (*)
+|    \--- org.apache.commons:commons-text:1.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:mobileservlet-sb-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- org.primefaces:primefaces:6.2.5
+|    |    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |    +--- com.ibm.icu:icu4j:61.1
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- commons-codec:commons-codec:1.11
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-dml:2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:mobileservlet-sb-dml:2.0.1-Build.2
+|         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:replenishmentperiod-ejb -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:accountingperiod-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-casscounterchanged-ejb:2.0.1-Build.2 (*)
+|    +--- org.apache.commons:commons-lang3:3.7
+|    \--- com.google.code.gson:gson:2.8.2
++--- com.dieboldnixdorf.txm.server-sb:accounting-sb-ejb -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:accounting-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:accounting-sb-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:accountingperiod-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:accountingperiod-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-ddl:2.0.1-Build.2
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-casscounterchanged-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:checkservice-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- commons-io:commons-io:2.6
+|    +--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    \--- commons-codec:commons-codec:1.11
+|    +--- com.dieboldnixdorf.txm.server-sb:checkservice-ocm-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:servicetrx-checkprocessing-ejb:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:servicetrx-checkperiodprocessing-ejb:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- org.apache.commons:commons-lang3:3.7
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- com.twelvemonkeys.imageio:imageio-core:3.3.2
+|    |    |    +--- com.twelvemonkeys.common:common-lang:3.3.2
+|    |    |    +--- com.twelvemonkeys.common:common-io:3.3.2
+|    |    |    |    \--- com.twelvemonkeys.common:common-lang:3.3.2
+|    |    |    \--- com.twelvemonkeys.common:common-image:3.3.2
+|    |    |         +--- com.twelvemonkeys.common:common-lang:3.3.2
+|    |    |         \--- com.twelvemonkeys.common:common-io:3.3.2 (*)
+|    |    +--- com.twelvemonkeys.imageio:imageio-tiff:3.3.2
+|    |    |    +--- com.twelvemonkeys.imageio:imageio-core:3.3.2 (*)
+|    |    |    +--- com.twelvemonkeys.imageio:imageio-metadata:3.3.2
+|    |    |    |    +--- com.twelvemonkeys.imageio:imageio-core:3.3.2 (*)
+|    |    |    |    +--- com.twelvemonkeys.common:common-lang:3.3.2
+|    |    |    |    +--- com.twelvemonkeys.common:common-io:3.3.2 (*)
+|    |    |    |    \--- com.twelvemonkeys.common:common-image:3.3.2 (*)
+|    |    |    +--- com.twelvemonkeys.common:common-lang:3.3.2
+|    |    |    +--- com.twelvemonkeys.common:common-io:3.3.2 (*)
+|    |    |    \--- com.twelvemonkeys.common:common-image:3.3.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-ocm-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-sb:imageservice-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:imageservice-ocm-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:imageservice-dal-ejb:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:imageservice-ddl:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:imageservice-dml:2.0.1-Build.2
+|    |    \--- org.apache.commons:commons-lang3:3.7
+|    \--- commons-io:commons-io:2.6
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-emailprocessor -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:texttemplates-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.2
+|    |         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |         \--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ddl:2.0.1-Build.2
+|    \--- com.dieboldnixdorf.txm.server-sb:ereceipt-emailprocessor-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-emailsender -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:messageservice-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-defaultenhancer -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-pdfgenerator -> 2.0.1-Build.2
+|    +--- com.github.librepdf:openpdf:1.0.5
+|    |    +--- org.bouncycastle:bcprov-jdk15on:1.58
+|    |    \--- org.bouncycastle:bcpkix-jdk15on:1.58 (*)
+|    +--- com.github.librepdf:pdf-xml:1.0.5
+|    |    \--- com.github.librepdf:openpdf:1.0.5 (*)
+|    +--- com.github.librepdf:pdf-html:1.0.5
+|    |    +--- com.github.librepdf:pdf-xml:1.0.5 (*)
+|    |    \--- com.github.librepdf:openpdf:1.0.5 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:ereceipt-texttemplates:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- commons-codec:commons-codec:1.11
+|         +--- com.dieboldnixdorf.txm.server-core:texttemplates-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.server-sb:ereceipt-texttemplates-dml:2.0.1-Build.2
+|              \--- com.dieboldnixdorf.txm.server-core:texttemplates-ddl:2.0.1-Build.1 -> 2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-smsprocessor -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:ereceipt-emailprocessor:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-textprocessor -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:ereceipt-texttemplates:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:ereceipt-texttemplates -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:wscommandinterface-webapp -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-sb:wscommandinterface-loginchecker:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.2 (*)
+|    \--- org.apache.commons:commons-lang3:3.7
++--- com.dieboldnixdorf.txm.server-addon:sam-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:sam-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:sam-server-detection-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:sam-common:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-addon:sam-ddl:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-addon:sam-dml:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:journalappender-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:messageservice-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-addon:sam-ocm-wf:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-addon:sam-sb -> 2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-addon:sam-server-detection-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-addon:elasticgroups-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-addon:elasticgroups-ocm-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-sb:customerpreferences-webapp -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:webservicecommon:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-sb:rkl-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:core-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:rkl-ocm-ejb:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:rkl-ejb:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:rkl-common:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:hsmservicebase:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- org.bouncycastle:bcprov-jdk15on:1.58
+|    |    |    |    +--- org.bouncycastle:bcpkix-jdk15on:1.58 (*)
+|    |    |    |    +--- commons-io:commons-io:2.6
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:rkl-ddl:2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:rkl-dml:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- org.bouncycastle:bcprov-jdk15on:1.58
+|    |    |    \--- commons-io:commons-io:2.6
+|    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- commons-io:commons-io:2.6
+|    |    \--- com.dieboldnixdorf.txm.server-sb:rkl-ocm-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:rkl-ejb:2.0.1-Build.2 (*)
+|    +--- commons-io:commons-io:2.6
+|    \--- org.apache.commons:commons-lang3:3.7
++--- com.dieboldnixdorf.txm.trxsafe:trxsafejournalappender-ejb -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:journalappender-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-initworkstation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-dml:2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4
+|    |    +--- com.google.code.gson:gson:2.8.2
+|    |    +--- io.vavr:vavr:0.9.1 (*)
+|    |    +--- io.reactivex:rxjava:1.3.4
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafejournalappender-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ocm-ejb:2.0.1-Build.4
+|         +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafedisposal-ejb -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-prestaged-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.esotericsoftware:kryo:4.0.1 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4
+|         +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|         +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|         +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ddl:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-ejb -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-ddl:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-testserver-webapp -> 2.0.1-Build.4
+|    +--- com.google.code.gson:gson:2.8.2
+|    +--- org.apache.commons:commons-lang3:3.7
+|    +--- commons-codec:commons-codec:1.11
+|    \--- commons-io:commons-io:2.6
++--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-ejb:2.0.1-Build.2
+|    |         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |         +--- org.apache.commons:commons-lang3:3.7
+|    |         \--- com.dieboldnixdorf.txm.server-sb:checkservice-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-ejb:2.0.1-Build.4
+|         +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:servicetrx-consumerinfo-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.trxsafe:clientbrandingdata:2.0.1-Build.4
+|         +--- com.google.code.gson:gson:2.8.2
+|         +--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ddl:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-webview-webapp -> 2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-consumerinfo-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-consumersearch-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-addon:sam-server-detection-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:branchselectionservice-ocm-wf:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeconnectorutil:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-ejb:2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellerapproval-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeapproval-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeapproval-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeapproval-dml:2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-approval-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellercardless-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-cardless-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellercheck-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-dml:2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-checkvalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.3 (*)
+|         \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellerimgval-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeimagetransactions-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-sb:imageservice-dal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeimagetransactions-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeimagetransactions-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-imagevalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellerlimit-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafelimitapproval-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafelimitapproval-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafelimitapproval-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellerprestaged-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-dml:2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:servicetrx-prestaged-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.trxsafe:smarttellersupreq-ocm-wf -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafesupportrequest-ejb:2.0.1-Build.4
+|         +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|         +--- com.dieboldnixdorf.txm.trxsafe:tabletnotifications-ejb:2.0.1-Build.4 (*)
+|         +--- com.dieboldnixdorf.txm.trxsafe:trxsafesupportrequest-ddl:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafesupportrequest-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-mobileservlet-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellerprestaged-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:smarttellercardless-ocm-wf:2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-approval-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellerapproval-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-approval-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-checkvalidation-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellercheck-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-checkvalidation-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-imagevalidation-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellerimgval-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-imagevalidation-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-limitapproval-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellerlimit-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-limitapproval-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-supportrequest-ocm-wf -> 2.0.1-Build.4
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-ocm-wf:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:smarttellersupreq-ocm-wf:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-supportrequest-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-ocmassist-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafeconnectorutil -> 2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-webservice-v2-webapp -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:webservicecommon:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-consumersearch-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-cardless-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeapproval-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafelimitapproval-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafedisposal-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafesupportrequest-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafesecuritydelay-ejb:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafesecuritydelay-ddl:2.0.1-Build.4
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafesecuritydelay-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeimagetransactions-ejb:2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-webservice-c3-webapp -> 2.0.1-Build.4
+|    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.9.4
+|    |    +--- com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.9.4
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.9.4 -> 2.9.5
+|    |    |    \--- com.fasterxml.jackson.core:jackson-databind:2.9.4 -> 2.9.5 (*)
+|    |    \--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.4
+|    |         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0 -> 2.9.5
+|    |         +--- com.fasterxml.jackson.core:jackson-core:2.9.4 -> 2.9.5
+|    |         \--- com.fasterxml.jackson.core:jackson-databind:2.9.4 -> 2.9.5 (*)
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.3
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0 -> 2.9.5
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.9.3 -> 2.9.5
+|    |    \--- com.fasterxml.jackson.core:jackson-databind:2.9.3 -> 2.9.5 (*)
+|    +--- io.swagger:swagger-jaxrs:1.5.19
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- io.swagger:swagger-core:1.5.19
+|    |    |    +--- org.apache.commons:commons-lang3:3.2.1 -> 3.7
+|    |    |    +--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.5
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.5
+|    |    |    |    +--- org.yaml:snakeyaml:1.18 -> 1.19
+|    |    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.9.5
+|    |    |    +--- io.swagger:swagger-models:1.5.19
+|    |    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.5
+|    |    |    |    +--- org.slf4j:slf4j-api:1.7.22 -> 1.7.25
+|    |    |    |    \--- io.swagger:swagger-annotations:1.5.19
+|    |    |    \--- com.google.guava:guava:20.0 -> 23.6-jre (*)
+|    |    +--- org.reflections:reflections:0.9.11
+|    |    |    +--- com.google.guava:guava:20.0 -> 23.6-jre (*)
+|    |    |    \--- org.javassist:javassist:3.21.0-GA -> 3.22.0-GA
+|    |    \--- com.google.guava:guava:20.0 -> 23.6-jre (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-consumerinfo-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-accountservice-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.esotericsoftware:kryo:4.0.1 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-prestaged-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-transferfunds-ejb:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeadminplugin-ocm-ejb:2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-approval -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-approval-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-approval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.4 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-dml:2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeapproval-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-approval-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-cardless -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-cardless-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-session-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-cardless-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-checkcashing -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkcashing-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-checkcashing-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-checkvalidation -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-checkvalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-ejb:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-checkvalidation-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-deposit -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcancel-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-limitapproval:2.0.1-Build.4
+|    |    +--- com.dieboldnixdorf.txm.server-core:service-profiles-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:servicetrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-dml:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafelimitapproval-ejb:2.0.1-Build.4 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-limitapproval-dml:2.0.1-Build.4
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-deposit-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-imagevalidation -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-imagevalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-imagevalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:imageservice-dal-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeimagetransactions-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-imagevalidation-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-limitapproval -> 2.0.1-Build.4 (*)
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-mmpayment -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecheckcashing-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-mmpayment-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-prestaged -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-core:routing-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-prestaged-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-cardless-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:messageservice-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-cashin-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashout-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-service-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashout-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafecardlessauth-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafesecuritydelay-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-prestaged-dml:2.0.1-Build.4
+|         \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-cardless-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-requestsupport -> 2.0.1-Build.4
+|    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-requestsupport-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafesupportrequest-ejb:2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles:2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-requestsupport-dml:2.0.1-Build.4
++--- com.dieboldnixdorf.txm.server-sb:eisph-obapi-ejb -> 2.0.1-Build.2
+|    +--- com.networknt:json-schema-validator:0.1.19
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    +--- org.slf4j:slf4j-api:1.7.25
+|    |    +--- org.slf4j:slf4j-ext:1.7.25
+|    |    |    \--- org.slf4j:slf4j-api:1.7.25
+|    |    \--- org.apache.commons:commons-lang3:3.5 -> 3.7
+|    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-crypt:crypt-functions-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-dukpt-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-zone-ejb:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-terminal-ejb:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-crypt:crypt-hsmaccess-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisph:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:groovy-converter:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- org.codehaus.groovy:groovy-all:2.4.12
+|    |    +--- com.google.code.gson:gson:2.8.2
+|    |    \--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:eisconnector-http-rar:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-http:2.0.1-Build.3
+|    |         +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |         +--- commons-codec:commons-codec:1.11
+|    |         +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |         \--- com.dieboldnixdorf.txm.server-core:eisconnector-http-dml:2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-sb:eisph-obapi-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-sb:sopadmin-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sopadmin-ocm-ejb:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:sopadmin-ddl:2.0.1-Build.2
+|         \--- com.dieboldnixdorf.txm.server-sb:sopadmin-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.server-sb:sdmserver-ocm-wf -> 2.0.1-Build.2
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sdmservernts-ejb:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sdmserver-ocm-ejb:2.0.1-Build.2
+|    |         +--- com.dieboldnixdorf.txm.server-core:taskscheduler-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.2 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-sb:sdmcommon:2.0.1-Build.2
+|    |         |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |         |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-sdm-ejb:2.0.1-Build.2
+|    |         |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |         |    \--- com.thoughtworks.xstream:xstream:1.4.9
+|    |         |         +--- xmlpull:xmlpull:1.1.3.1
+|    |         |         \--- xpp3:xpp3_min:1.1.4c
+|    |         +--- com.dieboldnixdorf.txm.server-sb:sdmserver-ddl:2.0.1-Build.2
+|    |         \--- com.dieboldnixdorf.txm.server-sb:sdmserver-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.server-sb:sdmserver-ocm-ejb:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:sdmpackage:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sdmcommon:2.0.1-Build.2 (*)
+|    |    \--- org.apache.commons:commons-lang3:3.7
+|    +--- commons-io:commons-io:2.6
+|    \--- commons-codec:commons-codec:1.11
++--- com.dieboldnixdorf.txm.sc-device:sdmconnector-ejb -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.sc-device:atmconnect-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-device:atmconnect-common:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.sc-device:sc-base-connect-ejb:2.0.1-Build.3
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-invalidpin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-initworkstation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-helloworld-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- commons-configuration:commons-configuration:1.10 (*)
+|    |    |    +--- com.thoughtworks.xstream:xstream:1.4.9 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.sc-device:atmconnect-dml:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.sc-device:sc-base-connect-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-dml:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-rar:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |         \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sdmserver-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:sam-server-detection-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.google.code.gson:gson:2.8.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:journalappender-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ddl:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- org.apache.pdfbox:pdfbox:2.0.9
+|    |    +--- org.apache.pdfbox:fontbox:2.0.9
+|    |    |    \--- commons-logging:commons-logging:1.2
+|    |    \--- commons-logging:commons-logging:1.2
+|    \--- org.apache.poi:poi:3.17 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-sb-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-sb-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-sb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:reprocess-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-paymentdata-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkcashing-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkdeposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:checkservice-access-ejb:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:checkservice-dal:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountmovement-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.esotericsoftware:kryo:4.0.1 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountoverview-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountoverview-dml:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountselection-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-pinchange-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-pinchange:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    |    |    \--- com.dieboldnixdorf.txm.server-core:multichanneltrx:2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-multichannel:2.0.1-Build.2
+|    |    |    |         +--- com.dieboldnixdorf.txm.server-core:multichanneltrx:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-geldkarte-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:iso-converter2:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-loadprepaid-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-loadprepaid-dml:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-opt-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:bytemsg-converter:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    |         \--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-statementprint-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-transfer-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-transfertemplate-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-sb-dml:2.0.1-Build.3
+|    |    |         \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-mobileservlet-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-mobileservlet-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-mobileservlet-dml:2.0.1-Build.3
+|    |         +--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-dml:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |         \--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-notification-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-notification-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-notification:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-dal:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-notification-ddl:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-core:server-ddl:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-notification-dml:2.0.1-Build.3
+|    |    |         \--- com.dieboldnixdorf.txm.server-core:server-dml:2.0.1-Build.1 -> 2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:importexport-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-prestaged-trx-dml -> 2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-addon:reporting-customer-preferences-dml -> 2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-addon:reporting-service-tx -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ejb:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-cardless-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-checkvalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:servicetrx-prestaged-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-addon:reporting-service-tx-dml:2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
++--- com.dieboldnixdorf.txm.server-addon:reporting-service-tx-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.server-addon:reporting-e-receipt-ocm-wf -> 2.0.1-Build.3
+|    +--- org.primefaces:primefaces:6.2.5
+|    +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    +--- com.ibm.icu:icu4j:61.1
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-e-receipt-ocm-ejb:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-e-receipt:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-e-receipt-dml:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-dml:2.0.1-Build.3
+|    |    |    \--- com.dieboldnixdorf.txm.server-addon:reporting-customer-preferences-dml:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-ejb:2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-addon:reporting-ocm-wf:2.0.1-Build.3 (*)
+|    +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ocm-wf:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-accountmovement-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3
+|    |    +--- com.dieboldnixdorf.txm.server-crypt:message-protection:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-initworkstation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-casscounterchanged-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.wscc:wscc-base-ejb:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-functions-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.wscc:wscc-ddl:2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ddl:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.wscc:wscc-dml:2.0.1-Build.3
+|    |    |         \--- com.dieboldnixdorf.txm.server-sb:sopadmin-dml:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.wscc:base-wscc-wf:2.0.1-Build.3
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.wscc:wscc-base-ejb:2.0.1-Build.3 (*)
+|    |    |    +--- commons-codec:commons-codec:1.11
+|    |    |    +--- com.dieboldnixdorf.txm.server-crypt:message-protection:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.9.5 (*)
+|    |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.5
+|    |    |    +--- com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.9.4 (*)
+|    |    |    +--- org.glassfish.tyrus:tyrus-container-grizzly-server:1.13.1
+|    |    |    |    +--- org.glassfish.grizzly:grizzly-framework:2.3.25 -> 2.4.2
+|    |    |    |    +--- org.glassfish.grizzly:grizzly-http-server:2.3.25 -> 2.4.2
+|    |    |    |    |    \--- org.glassfish.grizzly:grizzly-http:2.4.2
+|    |    |    |    |         \--- org.glassfish.grizzly:grizzly-framework:2.4.2
+|    |    |    |    +--- org.glassfish.tyrus:tyrus-server:1.13.1
+|    |    |    |    |    +--- org.glassfish.tyrus:tyrus-client:1.13.1
+|    |    |    |    |    |    \--- org.glassfish.tyrus:tyrus-core:1.13.1
+|    |    |    |    |    |         \--- org.glassfish.tyrus:tyrus-spi:1.13.1
+|    |    |    |    |    \--- org.glassfish.tyrus:tyrus-container-grizzly-client:1.13.1
+|    |    |    |    |         +--- org.glassfish.grizzly:grizzly-framework:2.3.25 -> 2.4.2
+|    |    |    |    |         +--- org.glassfish.grizzly:grizzly-http-server:2.3.25 -> 2.4.2 (*)
+|    |    |    |    |         \--- org.glassfish.tyrus:tyrus-client:1.13.1 (*)
+|    |    |    |    \--- org.glassfish.tyrus:tyrus-container-grizzly-client:1.13.1 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.wscc:wscc-template:2.0.1-Build.3
+|    |    \--- com.dieboldnixdorf.txm.wscc:wscc-ocm-wf:2.0.1-Build.3
+|    |         +--- org.primefaces:primefaces:6.2.5
+|    |         +--- org.primefaces.extensions:primefaces-extensions:6.2.4 (*)
+|    |         +--- com.ibm.icu:icu4j:61.1
+|    |         +--- com.dieboldnixdorf.txm.wscc:wscc-ocm-ejb:2.0.1-Build.3
+|    |         |    +--- com.dieboldnixdorf.txm.server-core:core-ocm-ejb:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|    |         |    +--- com.dieboldnixdorf.txm.wscc:wscc-base-ejb:2.0.1-Build.3 (*)
+|    |         |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-core:server-ocm-wf:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-crypt:message-protection:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountmovement-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-accountoverview-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountoverview-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-approval-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-approval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-cashin-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-checkcashing-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkcashing-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-checkdeposit-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkdeposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-clientsettlement-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-clientsettlement-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-creditorselection-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-creditorselection-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.server-sb:sbtrx-creditorselection-dml:2.0.1-Build.2
++--- com.dieboldnixdorf.txm.wscc:v02-customerpreferences-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-deposit-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-ereceipt-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-imagevalidation-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-imagevalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-limitapproval-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-loadprepaid-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-loadprepaid-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-mixedmediapayment-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-paymentdata-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-paymentdata-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-pinchange-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-pinchange-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-prestaged-cashin-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-prestaged-cashout-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashout-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-prestaged-deposit-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-prestaged-service-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-service-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-requestsupport-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-requestsupport-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-rkl-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-rkl-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-sb:rkl-common:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:rkl-ejb:2.0.1-Build.2 (*)
+|         \--- com.thoughtworks.xstream:xstream:1.4.9 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-sdm-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-sdm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-sop-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sopadmin-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-transferfunds-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-transferfunds-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.server-core:multichanneltrx-transferfunds:2.0.1-Build.1 -> 2.0.1-Build.3
+|         |    +--- com.dieboldnixdorf.txm.server-core:multichanneltrx:2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-core:multichanneltrx-paymenttable-ejb:2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.server-sb:sbtrx-multichannel:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:v02-withdrawal-wscc-wf -> 2.0.1-Build.3
+|    +--- com.dieboldnixdorf.txm.wscc:v02-core-wscc-wf:2.0.1-Build.3 (*)
+|    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- project :devhandler-scc-sample-dml
++--- com.dieboldnixdorf.txm.sc-classic:sc-lookandfeel-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-lookandfeel-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-lookandfeel-flow-scc-wf:2.0.1-Build.2
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-dml:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-interface:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2
+|         |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-view-interface:2.0.1-Build.2
+|         |    |    +--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.2 -> 2.0.1-Build.3
+|         |    |    +--- com.dieboldnixdorf.txm.sc-device:sc-utilities:2.0.1-Build.2 -> 2.0.1-Build.3
+|         |    |    |    \--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.3
+|         |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    |    \--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-dss:2.0.1-Build.2
+|         |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|         |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.sc-device:sc-utilities:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.sc-device:sc-config:2.0.1-Build.2 -> 2.0.1-Build.3
+|         |         +--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.3
+|         |         +--- com.dieboldnixdorf.txm.sc-device:sc-inventory:2.0.1-Build.3
+|         |         |    \--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.3
+|         |         +--- com.dieboldnixdorf.txm.sc-device:sc-utilities:2.0.1-Build.3 (*)
+|         |         \--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-interface:2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.sc-device:sc-base-connect-ejb:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-crypt:message-protection:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-casscounterchanged-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-initswitchover-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-accesscodeprint-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         |    |    \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|         |    \--- cglib:cglib:3.2.5
+|         |         +--- org.ow2.asm:asm:5.2
+|         |         \--- org.apache.ant:ant:1.9.6
+|         |              \--- org.apache.ant:ant-launcher:1.9.6
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-requestsupport-scc-wf:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-requestsupport-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-imagevalidation-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-admin-ejb:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:fee-management2-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-functions-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-crypt:crypt-zka-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|         |    |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-direct:2.0.1-Build.1 -> 2.0.1-Build.3
+|         |    |    |    \--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.3 (*)
+|         |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    |    +--- com.dieboldnixdorf.txm.server-core:crypt-common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    |    \--- com.dieboldnixdorf.txm.server-crypt:crypt-zka-dml:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.server-core:eisconnector:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:eisconnector-http:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp-rar:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-admin-scc-wf:2.0.1-Build.2
+|         |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|         |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-admin-ejb:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-eisconnector-rar:2.0.1-Build.2
+|         |    \--- com.dieboldnixdorf.txm.server-core:eisconnector-tcp:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:scc-template:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-device:atmconnect-ejb:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|         +--- com.dieboldnixdorf.txm.sc-device:atmconnect-servlet:2.0.1-Build.2 -> 2.0.1-Build.3
+|         |    +--- com.dieboldnixdorf.txm.sc-device:atmconnect-common:2.0.1-Build.3 (*)
+|         |    +--- com.dieboldnixdorf.txm.sc-device:atmconnect-ejb:2.0.1-Build.3 (*)
+|         |    \--- javax.servlet.jsp:jsp-api:2.2
+|         +--- com.dieboldnixdorf.txm.sc-device:atmconnect-dml:2.0.1-Build.2 -> 2.0.1-Build.3
+|         \--- com.dieboldnixdorf.txm.sc-device:sc-sop-admin:2.0.1-Build.2 -> 2.0.1-Build.3
+|              +--- com.dieboldnixdorf.txm.sc-device:sc-sop-shared:2.0.1-Build.3
+|              |    +--- com.dieboldnixdorf.txm.sc-device:atmconnect-common:2.0.1-Build.3 (*)
+|              |    \--- com.fasterxml.jackson.core:jackson-annotations:2.9.5
+|              +--- com.dieboldnixdorf.txm.sc-device:atmconnect-ejb:2.0.1-Build.3 (*)
+|              +--- com.dieboldnixdorf.txm.server-sb:checkperiod-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.server-sb:replenishmentperiod-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|              \--- com.dieboldnixdorf.txm.server-sb:sopadmin-ocm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-accountmovement-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountmovement-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountmovement-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-view-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountmovement-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountmovement-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-interface:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-view-interface:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-device:sc-ignition:2.0.1-Build.2 -> 2.0.1-Build.3
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-device:sc-utilities:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountselection-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-interface:2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-interface:2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-flow-scc-wf:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-interface:2.0.1-Build.2
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-statementprint-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountmovement-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-dml:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-interface:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-accountoverview-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountoverview-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountoverview-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-view-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountoverview-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountoverview-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:common:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:server-ejb:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-accountoverview-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-interface:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-ble-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-ble-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-ble-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-ble-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-ble-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-branchdeposit-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-branchdeposit-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-branchdeposit-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-flow-scc-wf:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-interface:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-interface:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2
+|    |    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-dss:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafebranchdeposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-dml:2.0.1-Build.2
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|         +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2 (*)
+|         \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-server:2.0.1-Build.2
+|              +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-server:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-dml:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-interface:2.0.1-Build.2 (*)
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
+|              |    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-server:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-dml:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-interface:2.0.1-Build.2
+|              |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-flow-scc-wf:2.0.1-Build.2
+|              |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-interface:2.0.1-Build.2 (*)
+|              |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|              |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|              |    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-customerpreferences-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|              |    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-ereceipt-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|              |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
+|              +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-server:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-dml:2.0.1-Build.2
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2 (*)
+|              |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-interface:2.0.1-Build.2
+|              |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|              |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|              |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-interface:2.0.1-Build.2
+|              |    |         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|              |    |         +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|              |    |         \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|              |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
+|              \--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-server:2.0.1-Build.2
+|                   +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-dml:2.0.1-Build.2
+|                   +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-interface:2.0.1-Build.2 (*)
+|                   +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|                   \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-limitapproval-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-checkcashing-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkcashing-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkcashing-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkcashing-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkcashing-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkcashing-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-customerpreferences-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-checkdeposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-directmarketing-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-directmarketing-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-directmarketing-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-directmarketing-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-directmarketing-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-emptyandfill-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emptyandfill-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emptyandfill-fill-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafeemptyfill-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emptyandfill-empty-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashout-flow-scc-wf:2.0.1-Build.2
+|    |         +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |         +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-flow-scc-wf:2.0.1-Build.2 (*)
+|    |         +--- com.dieboldnixdorf.txm.sc-device:sc-base-connect-ejb:2.0.1-Build.2 -> 2.0.1-Build.3 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |         +--- com.dieboldnixdorf.txm.server-sb:sbtrx-withdrawal-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |         \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashout-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-emv-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emv-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emv-interface:2.0.1-Build.2
+|    |    +--- com.wincornixdorf.emv-base:pce-emv-base:r000059_05
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-emv-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-emv-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-envelopedeposit-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-envelopedeposit-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-envelopedeposit-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-envelopedeposit-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-envelopedeposit-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-envelopedeposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2
+|    |         \--- com.dieboldnixdorf.txm.server-sb:server-sb-ejb:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafe-serviceprofiles-deposit:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashout-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-checkin-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-mixedmediapayment-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-payment-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-payment-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-payment-interface:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-payment-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediapayment-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-payment-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-barcode-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-paymentdata-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-creditorselection-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-messagedialog-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-pinchange-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-pinchange-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-pinchange-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-emv-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-extendedprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-core:businessdomain:2.0.1-Build.1 -> 2.0.1-Build.3 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-pinchange-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashout-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashout-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashout-flow-scc-wf:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashout-interface:2.0.1-Build.2
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcashin-flow-scc-wf:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-prestageddeposit-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestageddeposit-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestageddeposit-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-interface:2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestageddeposit-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestageddeposit-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashin-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-cashcommon-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-interface:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-mixedmediadeposit-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-deposit-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-cashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.trxsafe:trxsafebase-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    |    \--- com.dieboldnixdorf.txm.trxsafe:trxsafecashin-ejb:2.0.1-Build.1 -> 2.0.1-Build.4 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-monitorbase-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcreate-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcreate-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcreate-interface:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcreate-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-prestagedcreate-interface:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-accountselection-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-prestaged-service-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-topup-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-topup-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-topup-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-interface:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-loadprepaid-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-fasttrack-server:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-receiptprint-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-virtualkeyboard-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-virtualkeyboard-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-virtualkeyboard-flow-scc-wf:2.0.1-Build.2
+|    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-rkl-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-rkl-dml:2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-rkl-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-rkl-interface:2.0.1-Build.2
+|    |    |    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-rkl-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-rkl-interface:2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.sc-classic:sc-sdm-server -> 2.0.1-Build.2
+|    +--- com.dieboldnixdorf.txm.sc-classic:sc-sdm-flow-scc-wf:2.0.1-Build.2
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-sdm-interface:2.0.1-Build.2
+|    |    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-core:2.0.1-Build.2 (*)
+|    |    |    \--- com.dieboldnixdorf.txm.server-sb:sdmcommon:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    |    +--- com.dieboldnixdorf.txm.sc-classic:sc-base-flow-scc-wf:2.0.1-Build.2 (*)
+|    |    \--- com.dieboldnixdorf.txm.server-sb:sbtrx-sdm-ejb:2.0.1-Build.1 -> 2.0.1-Build.2 (*)
+|    \--- com.dieboldnixdorf.txm.sc-classic:sc-base-server:2.0.1-Build.2 (*)
++--- com.dieboldnixdorf.txm.wscc:wscc-sample-dml -> 2.0.1-Build.3
+|    \--- com.dieboldnixdorf.txm.server-core:server-sample-dml:2.0.1-Build.2 -> 2.0.1-Build.3
+\--- com.dieboldnixdorf.txm.server-core:core-ocm-sample-dml -> 2.0.1-Build.3
+     \--- com.dieboldnixdorf.txm.server-core:mobileservlet-ocm-dml:2.0.1-Build.3
+
+wsccWarLib
+No dependencies
+
+(*) - dependencies omitted (listed previously)
+
+A web-based, searchable dependency report is available by adding the --scan option.
