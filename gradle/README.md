@@ -5,13 +5,13 @@
 SDP uses
 [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
 to execute Gradle build. To be compatible with TXM release, SDP gradle
-wrapper is set with the same version as in
+wrapper is with the same version as set in
 'sdpworkspace/gradle/wrapper/gradle-wrapper.properties'.
 
 ## descriptors
 
 These gradle descriptors are loaded by 'sdpworkspace/build.gradle' as
-the general gradle settings of sdpworkspace, including:
+the general settings of sdpworkspace, including:
 - Bitbucket Repositories
 - External dependencies
 - Artifacts Download Repositories
