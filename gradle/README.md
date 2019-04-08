@@ -13,7 +13,7 @@ wrapper is set with the same version as in
 These gradle descriptors are loaded by 'sdpworkspace/build.gradle' as
 the general gradle settings of sdpworkspace, including:
 - Bitbucket Repositories
-- Dependent Libraries
+- External dependencies
 - Artifacts Download Repositories
 - Maven Publish Repositories
 - Documentations
@@ -43,7 +43,7 @@ to leave off version numbers in dependencies section and have versions
 recommended by the Maven BOM in the TXM module
 'com.dieboldnixdorf.txm.externals:externals'.
 
-This descriptor centralizes the dependent libraries and their
+This descriptor centralizes the external dependencies and their
 recommended versions, including:
 - The libraries are being used in SDP, but provided by the TXM Maven
   BOM. For example, RTO modules.
