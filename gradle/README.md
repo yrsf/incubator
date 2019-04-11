@@ -97,6 +97,6 @@ The usages of the properties
 
 This gradle descriptor includes miscellaneous gradle settings.
 
-- set max processors for unit stest
+- set max processors for unit test
 - aggregate javadoc and readme
 - disable publishing options to accelerate build 

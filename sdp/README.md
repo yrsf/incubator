@@ -19,3 +19,5 @@ the modules due to naming restrictions of TXM gradle plugins.
 | sdpserver-common |          | txm-lib        | merged from sdpserver-shared and sdpserver-sopshared |
 | sdpclient-common |          | txm-lib        | renamed from sdpsmartclientwebapp-shared             |
 | pceversion       |          |                | removed as duplicate function with assembly-meta.jar |
+
+For more details about usages of TXM plugins, see the chapter buildSrc.
