@@ -3,7 +3,7 @@
 ## Modules
  
 The folder 'sdpinstall' contains install modules. Specific suffixes are
-added to the modules due to naming conventions of TXM gradle plugins.
+added to the modules due to naming restrictions of TXM gradle plugins.
 
 | Module       | Suffix   | TXM Plugin   | Description |
 |:-------------|:---------|:-------------|:------------|

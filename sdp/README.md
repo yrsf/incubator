@@ -3,7 +3,7 @@
 ## Modules
  
 The folder 'sdp' contains server modules. Specific suffixes are added to
-the modules due to naming conventions of TXM gradle plugins.
+the modules due to naming restrictions of TXM gradle plugins.
 
 | Module           | Suffix   | TXM Plugin     | Description                                          |
 |:-----------------|:---------|:---------------|:-----------------------------------------------------|
