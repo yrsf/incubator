@@ -6,7 +6,7 @@ SDP uses
 [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
 to execute Gradle build. To be compatible with TXM release, the version
 of gradle wrapper in SDP is with the same version as set in
-'sdpworkspace/gradle/wrapper/gradle-wrapper.properties'.
+'sdpworkspace/gradle/wrapper/gradle-wrapper.properties'
 
 ## Gradle Descriptors
 
@@ -26,26 +26,26 @@ in file system.
 
 The usages of the properties
 
-| Property | Usage |
-|---|---|
-| ATM_REPO_URL_ROOT | URL root of repositories in sdpatm |
-| RTO_REPO_URL_ROOT | URL root of repositories in sdprto |
-| RELEASE_BRANCH_NAME | indicates which release branch to checkout, and it could be overwritten by FEATURE_BRANCH_NAME |
-| FEATURE_BRANCH_NAME | indicates which feature branch to checkout, and it overwrites RELEASE_BRANCH_NAME only if the branch with name FEATURE_BRANCH_NAME does exist |
-| REPOS | defines all the repositories that are managed in sdpworkspace. Each repository has two properties, url and directory. Url is the location of remote repository; whereas directory is location with the relative path to sdpworkspace |
+| Property            | Usage                                                                                                                                                                                                                                |
+|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ATM_REPO_URL_ROOT   | URL root of repositories in sdpatm                                                                                                                                                                                                   |
+| RTO_REPO_URL_ROOT   | URL root of repositories in sdprto                                                                                                                                                                                                   |
+| RELEASE_BRANCH_NAME | indicates which release branch to checkout, and it could be overwritten by FEATURE_BRANCH_NAME                                                                                                                                       |
+| FEATURE_BRANCH_NAME | indicates which feature branch to checkout, and it overwrites RELEASE_BRANCH_NAME only if the branch with name FEATURE_BRANCH_NAME does exist                                                                                        |
+| REPOS               | defines all the repositories that are managed in sdpworkspace. Each repository has two properties, url and directory. Url is the location of remote repository; whereas directory is location with the relative path to sdpworkspace |
 
 The mappings of remote repositories and directories in file system 
 (relative path to sdpworkspace)
 
-| Repository | Directory |
-|---|---|
-| sdpatm/sdp | sdp |
-| sdpatm/sdpprojectclient | sdpclient |
-| sdpatm/sdpprojectconfiguration | sdpinstall |
-| sdpatm/sdpassets | sdp/sdpassets-scc-wf |
-| sdpatm/sdpwebcontent | sdp/sdpwebcontent-scc-wf |
-| sdpatm/sdpsimulators | sdpcommon/sdpsimulators |
-| sdprto/* | sdpcommon/* |
+| Repository                     | Directory                |
+|:-------------------------------|:-------------------------|
+| sdpatm/sdp                     | sdp                      |
+| sdpatm/sdpprojectclient        | sdpclient                |
+| sdpatm/sdpprojectconfiguration | sdpinstall               |
+| sdpatm/sdpassets               | sdp/sdpassets-scc-wf     |
+| sdpatm/sdpwebcontent           | sdp/sdpwebcontent-scc-wf |
+| sdpatm/sdpsimulators           | sdpcommon/sdpsimulators  |
+| sdprto/*                       | sdpcommon/*              |
 
 ### lib.gradle
 
@@ -81,21 +81,22 @@ to sdpworkspace/.publish for local use.
 In pipeline, the version number determines which repository is
 published to.
 
-- If version number ends with 'SNAPSHOT' or equals to gradle default
-  'unspecified', the artifacts are published to snapshot repository.
-- If version number matches '9.9.9.N', the artifacts are published to CI
-  repository. (This is current logic in SDP engineering)
-- In other situations, the artifacts are published to release
-  repository.
+- snapshot repository - if version number ends with 'SNAPSHOT' or equals
+  to gradle default 'unspecified'
+- CI repository - if version number matches '9.9.9.N'
+- release repository
 
 The usages of the properties
 
-| Property | Usage |
-|---|---|
-| group | fixed value of artifact publishing path |
-| version | version can be overridden in the command line with 'gradlew publish -Pversion=1.0.0'; environment variable 'VERSION' is with higher priority in order to integrate engineering. |
+| Property | Usage                                                                                                                                                                           |
+|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| group    | fixed value of artifact publishing path                                                                                                                                         |
+| version  | version can be overridden in the command line with 'gradlew publish -Pversion=1.0.0'; environment variable 'VERSION' is with higher priority in order to integrate engineering. |
 
 ### misc.gradle
 
-This gradle descriptor includes miscellaneous gradle settings, such as
-max processors for unit test.
+This gradle descriptor includes miscellaneous gradle settings.
+
+- set max processors for unit stest
+- aggregate javadoc and readme
+- disable publishing options to accelerate build 
