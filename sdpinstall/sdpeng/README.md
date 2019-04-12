@@ -1,7 +1,7 @@
 ## sdpeng
 
 This module provides specific tasks to support engineering, such as
-running scripts. These are the scripts
+executing scripts as listed below.
 
 | Name | Description                                                                                            |
 |:-----|:-------------------------------------------------------------------------------------------------------|
