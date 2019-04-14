@@ -16,4 +16,4 @@ Object) modules convert XML schemas to Java representations.
 | sdpmasterdataservices   | sdp-wsdl |
 | sdprsiservices          | sdp-wsdl |
 
-For details about these gradle plugins, see the chapter buildSrc.
+For details about these gradle plugins, see buildSrc.

@@ -34,7 +34,7 @@ With the gradle plugin *sdp-git*, these properties can be configured.
 | FEATURE_BRANCH_NAME | indicates which feature branch to checkout, and it overwrites RELEASE_BRANCH_NAME only if the branch with name FEATURE_BRANCH_NAME does exist                                                                                        |
 | REPOS               | defines all the repositories that are managed in sdpworkspace. Each repository has two properties, url and directory. Url is the location of remote repository; whereas directory is location with the relative path to sdpworkspace |
 
-For the property of REPOS, thess are the mappings of remote repositories
+For the property of REPOS, these are the mappings of remote repositories
 and directories in file system.
 
 | Remote Repository              | Directory(File system)                |
@@ -80,22 +80,24 @@ to sdpworkspace/.publish for local use.
 
 The usages of the publishing properties
 
-| Property | Usage                                                                                                                                                                        |
-|:---------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| group    | fixed value of artifact publishing path                                                                                                                                      |
-| version  | *version* determines which repository is published to: <br>**Snapshot**, if *version* ends with *SNAPSHOT* or equals to gradle default *unspecified* <br>**CI**, if *version* matches *9.9.9.N* <br>**Release**, if otherwise <br><br>*version* can be overridden in the command line, though environment variable *VERSION* is with higher priority <br>*gradlew publish -Pversion=1.0.0* |
+| Property | Usage                                                                                                                                                                                                                                                                                                                                                                                      |
+|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| group    | fixed value of artifact publishing path                                                                                                                                                                                                                                                                                                                                                    |
+| version  | *version* determines which repository is published to: <br>**SNAPSHOT** - if *version* ends with *SNAPSHOT* or equals to gradle default *unspecified* <br>**CI** - if *version* matches *9.9.9.N* <br>**RELEASE** - if otherwise <br><br>*version* can be overridden in the command line, though environment variable *VERSION* is with higher priority <br>*gradlew publish -Pversion=1.0.0* |
 
 ### misc.gradle
 
 This gradle descriptor includes miscellaneous gradle settings.
 
 - set max processors for unit test
-- aggregate javadoc and readme
-- disable publishing options to accelerate build 
+- aggregate javadoc and readme with gradle plugin *sdp-javadoc* and
+  *sdp-readme*
+- disable publishing options to accelerate build
 
-With the gradle plugin *sdp-misc*, these tasks are imported.
+## Organizing Gradle Projects 
 
-| Type | Name             | Description                                                                        |
-|:-----|:-----------------|:-----------------------------------------------------------------------------------|
-| Task | aggregatejavadoc | Aggregates Javadoc API documentation of all sub-projects                           |
-| Task | aggregatereadme  | Aggregates README markdown documentation of all sub-projects, and converts to HTML |
+| File/Dir                       | Reference                                                                                                                                                              |
+|:-------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| sdpworkspace/setting.gradle    | [Always_define_a_settings_file](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#always_define_a_settings_file)                               |
+| sdpworkspace/gradle.properties | [Declare properties in gradle.properties file](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#declare_properties_in_gradle_properties_file) |
+| sdpworkspace/buildSrc          | [Use buildSrc to abstract imperative logic](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)                               |

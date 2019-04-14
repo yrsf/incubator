@@ -12,4 +12,4 @@ modules due to naming restrictions of TXM gradle plugins.
 | sdpeng            |                    | sdp-eng      |             |
 | sdpchameleon      |                    |              |             |
 
-For details about these gradle plugins, see the chapter buildSrc.
+For details about these gradle plugins, see buildSrc.

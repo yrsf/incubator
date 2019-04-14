@@ -8,4 +8,4 @@ The folder 'sdpclient' contains client modules.
 | sdpclient-setup   | txm-database |             |
 | sdpserver-startup | txm-install  |             |
 
-For details about these gradle plugins, see the chapter buildSrc.
+For details about these gradle plugins, see buildSrc.

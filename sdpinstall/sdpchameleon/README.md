@@ -1,15 +1,34 @@
 ## sdpchameleon
 
-With execution of task *install*
+### Module
 
-- the application of chameleon and SDP customizations are assembled into
-  *sdpworkspace/sdpassembly/build/install/sdpassembly/chameleon*
+This module contains base24's chameleon configurations, including
 
-With gradle plugin *sdp-chameleon*, these tasks are imported.
+- startup scripts
+- communication protocol
+- message formats using XML implementation TXM provided
 
-| Type | Name      | Description                                                                                                |
-|:-----|:----------|:-----------------------------------------------------------------------------------------------------------|
-| Task | startch   | Starts chameleon with SDP customizations. <br>By this task, the output path of logs is *sdpworkspace/.log* |
-| Task | stopch    | Stops chameleon                                                                                            |
-| Task | deploych  | Deploys chameleon to *sdpworkspace/sdpinstall/sdpchameleon/build/runtime*                                  |
-| Task | ~~clean~~ | Disables this task to prevent the deployed runtime being deleted                                           |
+### SourceSet
+
+These base24's chameleon configurations should be placed at 
+> src/extension/chameleon
+
+which is a conventional SourceSet in the gradle plugin *txm-addition*.
+
+### Install
+ 
+With gradle plugin *txm-server-assembly*, the task *install* assembles
+the distribution of TXM chameleon into
+> sdpworkspace/sdpassembly/build/install/sdpassembly/chameleon
+
+and drops base24's chameleon configurations there. 
+
+### Usage
+
+With gradle plugin *sdp-chameleon*, these tasks are supported.
+```bash
+gradlew startch //start chameleon
+gradlew stopch //stop chameleon
+```
+
+More details about these plugins, see buildSrc.
