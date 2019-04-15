@@ -23,9 +23,9 @@ the distribution of TXM chameleon into
 
 and drops base24's chameleon configurations there. 
 
-### Usage
+### Starting and Stopping Chameleon
 
-With gradle plugin *sdp-chameleon*, these tasks are supported.
+With gradle plugin *sdp-chameleon*,
 ```bash
 gradlew startch //start chameleon
 gradlew stopch //stop chameleon

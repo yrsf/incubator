@@ -1,12 +1,34 @@
 # sdpclientassembly
 
-With gradle plugin *txm-sc-assembly*, these tasks, configurations and
-properties are imported.
+## Module
+ 
+This module is a placeholder in which client distribution is assembled.
 
-| Type          | Name               | Description                                                                                                                                                                                     |
-|:--------------|:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Task          | install            | Assembles client modules of SDP and TXM into installation artifacts, such as MSI and JInstall. <br>The path of output is  *sdpworkspace/sdpclientassembly/build/install/sdpclientassembly* |
-| Configuration | smartClientRuntime | Specifies the modules those are to be assembled within smartclient runtime                                                                                                                      |
-| Property      | msiWixToolsetDir   |                                                                                                                                                                                                 |
-| Property      | msiWixCandleArgs   |                                                                                                                                                                                                 |
-| Property      | msiWixMatching     |                                                                                                                                                                                                 |
+## Install
+
+With gradle plugin *txm-sc-assembly*, the task *install* assembles the
+modules that are with configuration *smartClientRuntime* into various
+setup types of installation.
+
+```bash
+|-- sdpworkspace
+|   |-- sdpclientassembly
+|       |-- build
+|           |-- install
+|               |-- sdpclientassembly
+|                   |-- smartclient             // setup type of devkit    
+|                   |-- smartclient-msi         // setup type of msi
+|                   |-- dependency.report   
+```
+
+## Installing, Starting and Stopping SmartClient MSI
+ 
+With gradle plugin *sdp-smartclient*,
+```bash
+gradlew msi         // install smartclient msi
+gradlew msix        // uninstall smartclient msi
+gradlew startmsi    // start smartclient msi
+gradlew stopmsi     // stop smartclient msi
+```
+
+More details about these plugins, see buildSrc.
