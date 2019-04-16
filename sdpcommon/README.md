@@ -4,8 +4,8 @@
 
 ### Module
  
-RTO(Reusable Transfer Object) modules convert XML schemas to Java
-representations.
+The modules of RTO, Reusable Transfer Object, convert XML schemas to
+Java representations.
 
 | Module                  | Plugin                |
 |:------------------------|:----------------------|

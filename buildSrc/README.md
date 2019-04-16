@@ -9,8 +9,32 @@ and how they function in the build process.
 ## TXM Plugin
 
 ### txm-lib
+
+When task *install* is executed, the module with this plugin is archived
+into jar and assembled into:
+
+- *txm-server.ear/lib*, if the module is included with configuration
+  *serverRuntime* in 
+  > sdpworkspace/sdpassembly/build.gradle
+  
+- *%PCE_HOME%/lib*, if the module is included with configuration
+  *smartClientRuntime* in 
+  > sdpworkspace/sdpclientassembly/build.gradle
+
 ### txm-ejb
+
+When task *install* is executed, the module with this plugin is archived
+into jar and assembled into *txm-server.ear* if the module is included
+with  configuration *serverRuntime* in
+>sdpworkspace/sdpassembly/build.gradle
+
 ### txm-rar
+
+When task *install* is executed, the module with this plugin is archived
+into rar and assembled into *txm-server.ear* if the module is included
+with configuration *serverRuntime* in
+>sdpworkspace/sdpassembly/build.gradle
+
 ### txm-ocm-ejb
 ### txm-ocm-wf
 ### txm-wf
@@ -31,7 +55,7 @@ and how they function in the build process.
 | Type          | Name               | Description                                                                                                                                                                                                                |
 |:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Task          | install            | Assembles the modules that are with configuration *smartClientRuntime* into various types of installation, such as devkit and msi. <br>The output path is *sdpworkspace/sdpclientassembly/build/install/sdpclientassembly* |
-| Configuration | smartClientRuntime | Specifies the modules those are to be assembled within smartclient runtime                                                                                                                                                 |
+| Configuration | smartClientRuntime | Specifies the modules those are to be assembled into smartclient runtime. Generally, the modules are archived into jar and deployed to *PCE_HOME/lib*                                                                      |
 | Property      | msiWixToolsetDir   |                                                                                                                                                                                                                            |
 | Property      | msiWixCandleArgs   |                                                                                                                                                                                                                            |
 | Property      | msiWixMatching     |                                                                                                                                                                                                                            |
@@ -48,7 +72,8 @@ and how they function in the build process.
 
 ### sdp-git
 
-This gradle plugin performs git operations.
+This gradle plugin performs git operations with the support of external
+library []()
 
 | Type     | Name                | Description                                                                                                                                                                                                                            |
 |:---------|:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -94,20 +119,20 @@ This gradle plugin performs git operations.
 
 | Type | Name       | Description                                                                                                                                                                                                                                                                                                                              |
 |:-----|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Task | startjb    | Starts jboss instance from *sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/run.cmd* with environment variables in jbossoptions.orig loaded <br>By this task, jboss logs are centralized to *sdpworkspace/.log/jboss*; whereas txm logs are centralized to *sdpworkspace/.log/server*                                    |
+| Task | startjb    | Starts jboss instance from <br>*sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/run.cmd* with environment variables in jbossoptions.orig loaded <br>By this task, jboss logs are centralized to *sdpworkspace/.log/jboss*; whereas txm logs are centralized to *sdpworkspace/.log/server*                                |
 | Task | stopjb     | Stops the started jboss instance                                                                                                                                                                                                                                                                                                         |
 | Task | optimizejb | Changes start options of jboss instance before deploy                                                                                                                                                                                                                                                                                    |
 | Task | deployjb   | Resets *JBOSS_HOME/standalone/deployments* and *JBOSS_HOME/configuration/standalone-full.xml* <br>Runs customized scripts from *sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/customize.cmd* <br>Explodes *sdpworkspace/sdpassembly/build/install/sdpassembly/txm-server.ear* into *JBOSS_HOME/standalone/deployments* |
 
 ### sdp-smartclient
 
-| Type | Name     | Description                                                                                                                                                     |
-|:-----|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Task | msi      | Installs smartclient from the msi setup in *sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient-msi*                                     |
-| Task | msix     | Uninstalls smartclient from the msi setup in *sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient-msi*                                   |
-| Task | startmsi | Starts the smartclient with the installed in c:/pce <br>By this task, the logs are centralized to *sdpworkspace/.log/client*                                    |
-| Task | stopmsi  | Stops smartclient                                                                                                                                               |
-| Task | startsc  | \<incubator\> Starts the smartclient with the devkit setup in *sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient/home/run_develop.cmd* |
+| Type | Name     | Description                                                                                                                                                         |
+|:-----|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Task | msi      | Installs smartclient from the msi setup in <br>*sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient-msi*                                     |
+| Task | msix     | Uninstalls smartclient from the msi setup in <br>*sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient-msi*                                   |
+| Task | startmsi | Starts the smartclient with the installed in c:/pce <br>By this task, the logs are centralized to *sdpworkspace/.log/client*                                        |
+| Task | stopmsi  | Stops smartclient                                                                                                                                                   |
+| Task | startsc  | \<incubator\> Starts the smartclient with the devkit setup in <br>*sdpworkspace/sdpclientassembly/build/install/sdpclientassembly/smartclient/home/run_develop.cmd* |
 
 ### sdp-simulator
 
