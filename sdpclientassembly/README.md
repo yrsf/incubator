@@ -11,14 +11,14 @@ modules that are with configuration *smartClientRuntime* into various
 setup types of installation.
 
 ```bash
-|-- sdpworkspace
-|   |-- sdpclientassembly
-|       |-- build
-|           |-- install
-|               |-- sdpclientassembly
-|                   |-- smartclient             // setup type of devkit    
-|                   |-- smartclient-msi         // setup type of msi
-|                   |-- dependency.report   
+-- sdpworkspace
+   |-- sdpclientassembly
+       |-- build
+           |-- install
+               |-- sdpclientassembly
+                   |-- smartclient             // setup type of devkit    
+                   |-- smartclient-msi         // setup type of msi
+                   |-- dependency.report   
 ```
 
 ## Installing and Uninstalling SmartClient MSI

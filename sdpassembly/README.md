@@ -12,19 +12,19 @@ the modules that are with configuration *includedDist* into consistent
 directories. The file tree of distribution
 
 ```bash
-|-- sdpworkspace
-|   |-- sdpassembly
-|       |-- build
-|           |-- install
-|               |-- sdpassembly
-|                   |-- chameleon           // application chameleon and SDP customizations    
-|                   |-- database            // database scripts including DDL and DML
-|                   |-- installjboss        // JBoss scripts of deploy and startup
-|                   |-- installwas          // WebSphere scripts of deploy and startup
-|                   |-- replication-scripts // scripts of replication support
-|                   |-- workbench           // utilities, like config editor and trace viewer
-|                   |-- dependency.report   
-|                   |-- txm-server.ear      
+-- sdpworkspace
+   |-- sdpassembly
+       |-- build
+           |-- install
+               |-- sdpassembly
+                   |-- chameleon           // application chameleon and SDP customizations    
+                   |-- database            // database scripts including DDL and DML
+                   |-- installjboss        // JBoss scripts of deploy and startup
+                   |-- installwas          // WebSphere scripts of deploy and startup
+                   |-- replication-scripts // scripts of replication support
+                   |-- workbench           // utilities, like config editor and trace viewer
+                   |-- dependency.report   
+                   |-- txm-server.ear      
 ```
 
 ## Starting and Stopping JBoss
