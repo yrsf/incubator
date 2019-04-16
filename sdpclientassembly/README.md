@@ -6,9 +6,9 @@ This module is a placeholder in which client distribution is assembled.
 
 ## Install
 
-With gradle plugin *txm-sc-assembly*, the task *install* assembles the
-modules that are with configuration *smartClientRuntime* into various
-setup types of installation.
+With gradle plugin [txm-sc-assembly](#txm-sc-assembly), the task
+*install* assembles the modules that are with configuration
+*smartClientRuntime* into various setup types of installation.
 
 ```bash
 -- sdpworkspace

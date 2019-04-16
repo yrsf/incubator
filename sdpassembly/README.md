@@ -6,10 +6,11 @@ This module is a placeholder in which server distribution is assembled.
 
 ## Install
 
-With this gradle plugin, the task *install* assembles the modules that
-are with configuration *serverRuntime* into txm-server.ear, and drops
-the modules that are with configuration *includedDist* into consistent
-directories. The file tree of distribution
+With gradle plugin [txm-server-assembly](#txm-server-assembly), the task
+*install* assembles the modules that are with configuration
+*serverRuntime* into txm-server.ear, and drops the modules that are with
+configuration *includedDist* into consistent directories. The file tree
+of distribution
 
 ```bash
 -- sdpworkspace
