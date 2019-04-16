@@ -23,7 +23,7 @@ setup types of installation.
 
 ## Installing and Uninstalling SmartClient MSI
  
-With gradle plugin *sdp-smartclient*,
+With gradle plugin [sdp-smartclient](#sdp-smartclient),
 ```bash
 gradlew msi         // install smartclient msi
 gradlew msix        // uninstall smartclient msi
@@ -31,10 +31,8 @@ gradlew msix        // uninstall smartclient msi
 
 ## Starting and Stopping SmartClient MSI
 
-With gradle plugin *sdp-smartclient*,
+With gradle plugin [sdp-smartclient](#sdp-smartclient),
 ```bash
 gradlew startmsi    // start smartclient msi
 gradlew stopmsi     // stop smartclient msi
 ```
-
-More details about these plugins, see buildSrc.

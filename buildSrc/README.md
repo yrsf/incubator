@@ -47,6 +47,19 @@ and how they function in the build process.
 ### sdp-wsdl
 
 ### sdp-git
+
+This gradle plugin performs git operations.
+
+| Type     | Name                | Description                                                                                                                                                                                                                            |
+|:---------|:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Task     | clone               | Git clones remote repositories into local workspace                                                                                                                                                                                    |
+| Task     | pull                | Git pulls remote repositories into local workspace                                                                                                                                                                                     |
+| Property | ATM_REPO_URL_ROOT   | URL root of repositories in sdpatm                                                                                                                                                                                                     |
+| Property | RTO_REPO_URL_ROOT   | URL root of repositories in sdprto                                                                                                                                                                                                     |
+| Property | RELEASE_BRANCH_NAME | Indicates which release branch to checkout, and it could be overwritten by FEATURE_BRANCH_NAME                                                                                                                                         |
+| Property | FEATURE_BRANCH_NAME | Indicates which feature branch to checkout, and it overwrites RELEASE_BRANCH_NAME only if the branch with name FEATURE_BRANCH_NAME does exist                                                                                          |
+| Property | REPOS               | Specifies all the repositories that are managed in sdpworkspace. Each repository has two properties, url and directory. Url is the location of remote repository; whereas directory is location with the relative path to sdpworkspace |
+
 ### sdp-eng
 
 | Type | Name    | Description                                                       |

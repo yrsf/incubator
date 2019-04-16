@@ -8,10 +8,8 @@ responses.
 
 ### Starting and Stopping Simulators 
 
-With gradle plugin *sdp-simulator*,
+With gradle plugin [sdp-simulator](#sdp-simulator),
 ```bash
 gradlew startsim    // start sdpsimulators
 gradlew stopsim     // stop sdpsimulators
 ```
-
-More details about these plugins, see buildSrc.

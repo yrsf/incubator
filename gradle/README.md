@@ -24,20 +24,10 @@ This gradle descriptor defines the settings of bitbucket repositories,
 and how the local tracked branches of these repositories are organized
 in file system.
 
-With the gradle plugin *sdp-git*, these properties can be configured.
+With gradle plugin [sdp-git](#sdp-git), the mappings of remote repositories and
+directories in file system are specified.
 
-| Property            | Usage                                                                                                                                                                                                                                |
-|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ATM_REPO_URL_ROOT   | URL root of repositories in sdpatm                                                                                                                                                                                                   |
-| RTO_REPO_URL_ROOT   | URL root of repositories in sdprto                                                                                                                                                                                                   |
-| RELEASE_BRANCH_NAME | indicates which release branch to checkout, and it could be overwritten by FEATURE_BRANCH_NAME                                                                                                                                       |
-| FEATURE_BRANCH_NAME | indicates which feature branch to checkout, and it overwrites RELEASE_BRANCH_NAME only if the branch with name FEATURE_BRANCH_NAME does exist                                                                                        |
-| REPOS               | defines all the repositories that are managed in sdpworkspace. Each repository has two properties, url and directory. Url is the location of remote repository; whereas directory is location with the relative path to sdpworkspace |
-
-For the property of REPOS, these are the mappings of remote repositories
-and directories in file system.
-
-| Remote Repository              | Directory(File system)                |
+| Remote Repository              | Directory                             |
 |:-------------------------------|:--------------------------------------|
 | sdpatm/sdp                     | sdpworkspace/sdp                      |
 | sdpatm/sdpprojectclient        | sdpworkspace/sdpclient                |
@@ -46,6 +36,8 @@ and directories in file system.
 | sdpatm/sdpwebcontent           | sdpworkspace/sdp/sdpwebcontent-scc-wf |
 | sdpatm/sdpsimulators           | sdpworkspace/sdpcommon/sdpsimulators  |
 | sdprto/*                       | sdpworkspace/sdpcommon/*              |
+
+More details about properties in git.gradle, see [sdp-git](#sdp-git)
 
 ### lib.gradle
 
@@ -80,9 +72,9 @@ to sdpworkspace/.publish for local use.
 
 The usages of the publishing properties
 
-| Property | Usage                                                                                                                                                                                                                                                                                                                                                                                      |
-|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| group    | fixed value of artifact publishing path                                                                                                                                                                                                                                                                                                                                                    |
+| Property | Usage                                                                                                                                                                                                                                                                                                                                                                                         |
+|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| group    | fixed value of artifact publishing path                                                                                                                                                                                                                                                                                                                                                       |
 | version  | *version* determines which repository is published to: <br>**SNAPSHOT** - if *version* ends with *SNAPSHOT* or equals to gradle default *unspecified* <br>**CI** - if *version* matches *9.9.9.N* <br>**RELEASE** - if otherwise <br><br>*version* can be overridden in the command line, though environment variable *VERSION* is with higher priority <br>*gradlew publish -Pversion=1.0.0* |
 
 ### misc.gradle
@@ -90,14 +82,13 @@ The usages of the publishing properties
 This gradle descriptor includes miscellaneous gradle settings.
 
 - set max processors for unit test
-- aggregate javadoc and readme with gradle plugin *sdp-javadoc* and
-  *sdp-readme*
+- aggregate javadoc with gradle plugin [sdp-javadoc](#sdp-javadoc)
+- aggregate readme with gradle plugin [sdp-readme](#sdp-readme)
 - disable publishing options to accelerate build
 
-## Organizing Gradle Projects 
+## Other descriptors 
 
-| File/Dir                       | Reference                                                                                                                                                              |
+| File                           | Reference                                                                                                                                                              |
 |:-------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | sdpworkspace/setting.gradle    | [Always_define_a_settings_file](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#always_define_a_settings_file)                               |
 | sdpworkspace/gradle.properties | [Declare properties in gradle.properties file](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#declare_properties_in_gradle_properties_file) |
-| sdpworkspace/buildSrc          | [Use buildSrc to abstract imperative logic](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)                               |

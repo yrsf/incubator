@@ -14,9 +14,7 @@ This module contains engineering shell scripts.
 
 ### Running Scripts
 
-With gradle plugin *sdp-eng*,
+With gradle plugin [sdp-eng](#sdp-eng),
 ```bash
 gradlew eng    // run the engineering shell scripts listed above
 ```
-
-More details about this plugin, see buildSrc.

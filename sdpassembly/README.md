@@ -29,10 +29,8 @@ directories. The file tree of distribution
 
 ## Starting and Stopping JBoss
  
-With gradle plugin *sdp-jboss*
+With gradle plugin [sdp-jboss](#sdp-jboss)
 ```bash
 gradlew startjb    // start jboss
 gradlew stopjb     // stop jboss
 ```
-
-More details about these plugins, see buildSrc.
