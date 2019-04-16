@@ -17,12 +17,12 @@ directories. The file tree of distribution
        |-- build
            |-- install
                |-- sdpassembly
-                   |-- chameleon           // application chameleon and SDP customizations    
-                   |-- database            // database scripts including DDL and DML
-                   |-- installjboss        // JBoss scripts of deploy and startup
+                   |-- chameleon           // SDP customized chameleon    
+                   |-- database            // Database scripts, DDL and DML
+                   |-- installjboss        // JBoss scripts, deploy and startup
                    |-- installwas          // WebSphere scripts of deploy and startup
-                   |-- replication-scripts // scripts of replication support
-                   |-- workbench           // utilities, like config editor and trace viewer
+                   |-- replication-scripts // Replication scripts
+                   |-- workbench           // Utilities, configEditor and traceViewer
                    |-- dependency.report   
                    |-- txm-server.ear      
 ```
