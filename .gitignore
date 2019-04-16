@@ -1,3 +1,6 @@
 .idea/
 *.ipr
 *.iml
+gradlew
+gradlew.bat
+gradle/wrapper/*
