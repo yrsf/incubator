@@ -20,7 +20,7 @@ directories. The file tree of distribution
                    |-- chameleon           // SDP customized chameleon    
                    |-- database            // Database scripts, DDL and DML
                    |-- installjboss        // JBoss scripts, deploy and startup
-                   |-- installwas          // WebSphere scripts of deploy and startup
+                   |-- installwas          // WebSphere scripts, deploy and startup
                    |-- replication-scripts // Replication scripts
                    |-- workbench           // Utilities, configEditor and traceViewer
                    |-- dependency.report   
