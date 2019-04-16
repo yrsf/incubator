@@ -100,6 +100,6 @@ and how they function in the build process.
 
 | Type | Name      | Description                                                      |
 |:-----|:----------|:-----------------------------------------------------------------|
-| Task | startsim  | Starts SDP simulators                                            |
-| Task | stopsim   | Stops SDP simulators                                             |
+| Task | startsim  | Starts sdpsimulators                                             |
+| Task | stopsim   | Stops sdpsimulators                                              |
 | Task | ~~clean~~ | Disables this task to prevent the deployed runtime being deleted |

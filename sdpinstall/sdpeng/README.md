@@ -2,7 +2,7 @@
 
 ### Module
 
-This module contains engineering shell scripts as listed below.
+This module contains engineering shell scripts.
 
 | Name | Description                                                                                            |
 |:-----|:-------------------------------------------------------------------------------------------------------|
@@ -12,5 +12,11 @@ This module contains engineering shell scripts as listed below.
 | conf | Generates environment variables that are loaded to each instance of application server                 |
 | dml  | Aggregates dml scripts into single sql file for each instance of application server                    |
 
-With gradle plugin *sdp-eng*, these scripts are executed by the task
-*eng*. More details about this plugin, see buildSrc.
+### Running Scripts
+
+With gradle plugin *sdp-eng*,
+```bash
+gradlew eng    // run the engineering shell scripts listed above
+```
+
+More details about this plugin, see buildSrc.

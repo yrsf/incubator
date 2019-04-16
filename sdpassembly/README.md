@@ -2,7 +2,7 @@
 
 ## Module
  
-This module is a placeholder, in which server distribution is assembled.
+This module is a placeholder in which server distribution is assembled.
 
 ## Install
 
@@ -31,8 +31,8 @@ directories. The file tree of distribution
  
 With gradle plugin *sdp-jboss*
 ```bash
-gradlew startjb    // start jboss instance
-gradlew stopjb     // stop jboss instance
+gradlew startjb    // start jboss
+gradlew stopjb     // stop jboss
 ```
 
 More details about these plugins, see buildSrc.
