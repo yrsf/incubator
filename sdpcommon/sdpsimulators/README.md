@@ -2,21 +2,16 @@
 
 ### Module
 
-This module contains simulators of EIS connectors to assist on local
-developing. The EIS connectors include
-
-- EAGLE
-- EBODS
-- RSI
-- VPC
-- BMW
+This module contains host simulators, which receive requests sent from
+EIS connectors(EAGLE/EBODS/RSI/VPC/BMW), and return with simulating
+responses.
 
 ### Starting and Stopping Simulators 
 
 With gradle plugin *sdp-simulator*,
 ```bash
-gradlew startsim    // start SDP simulators
-gradlew stopsim     // stop SDP simulators
+gradlew startsim    // start sdpsimulators
+gradlew stopsim     // stop sdpsimulators
 ```
 
 More details about these plugins, see buildSrc.
