@@ -1,6 +1,6 @@
-# sdpinstall
+# sdpconfig
  
-The folder 'sdpinstall' contains modules of installation, such as
+The folder 'sdpconfig' contains modules of installation, such as
 database, application server etc. Specific suffixes are added to the
 modules due to naming restrictions of TXM gradle plugins.
 

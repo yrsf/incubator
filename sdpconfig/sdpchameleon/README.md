@@ -10,7 +10,7 @@ This module contains base24's chameleon configurations, including
 
 ### SourceSet
 
-These base24's chameleon configurations should be placed at 
+These base24's chameleon configurations are placed at 
 > src/extension/chameleon
 
 which is a conventional SourceSet in gradle plugin [txm-addition](#txm-addition).

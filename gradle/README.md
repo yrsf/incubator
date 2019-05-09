@@ -31,7 +31,7 @@ directories in file system are specified.
 |:-------------------------------|:--------------------------------------|
 | sdpatm/sdp                     | sdpworkspace/sdp                      |
 | sdpatm/sdpprojectclient        | sdpworkspace/sdpclient                |
-| sdpatm/sdpprojectconfiguration | sdpworkspace/sdpinstall               |
+| sdpatm/sdpprojectconfiguration | sdpworkspace/sdpconfig               |
 | sdpatm/sdpassets               | sdpworkspace/sdp/sdpassets-scc-wf     |
 | sdpatm/sdpwebcontent           | sdpworkspace/sdp/sdpwebcontent-scc-wf |
 | sdpatm/sdpsimulators           | sdpworkspace/sdpcommon/sdpsimulators  |

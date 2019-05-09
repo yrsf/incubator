@@ -1,17 +1,31 @@
-# buildSrc
-
-SDP uses
-[buildSrc](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)
-to encapsulate custom plugins, and takes TXM binary plugins as
-supplements. It is imperative to understand the usages of these plugins
-and how they function in the build process.
+# buildSrc (Gradle Plugin)
 
 ## TXM Plugin
 
+TXM supplies several plugins to package up reusable pieces of build
+logic, which can be used across many different projects and builds. It
+is imperative to comprehend the usages of these plugins from the
+perspective of conventional gradle tasks.
+ 
+- build - assembles archives that serves as component, based on the
+  classes and resources attached to the main source set. Component
+  archives typically are modules of application server with file type of
+  jar, war, rar, and zip.
+  
+- install - assembles archives that serves as distribution, based on the
+  outputs of *build*. Distribution archives typically contain the 
+  executable application and other supporting files, such as ear,
+  database scripts.
+
+In TXM, plugin *txm-server-assembly* and plugin *txm-sc-assembly*
+implement the task *install* to assemble server distribution and client
+distribution respectively; whereas other plugins implements the task
+*build* to assemble component.
+
 ### txm-lib
 
-When task *install* is executed, the module with this plugin is archived
-into jar and assembled into:
+When task *install* is executed, the project with this plugin is
+archived into jar and assembled into:
 
 - *txm-server.ear/lib*, if the module is included with configuration
   *serverRuntime* in 
@@ -62,7 +76,13 @@ with configuration *serverRuntime* in
 
 ### txm-publish
 
-## SDP Plugin
+## Custom Plugin
+
+SDP uses
+[buildSrc](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)
+to encapsulate custom plugins. It is imperative for developers to
+understand the usages of these plugins and how are the outputs of these
+plugins they function in the build process.
 
 ### sdp-env-sourceset
 ### sdp-test-archive
@@ -110,9 +130,9 @@ library []()
 
 | Type | Name      | Description                                                                                                                                                |
 |:-----|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Task | startch   | Starts the chameleon from *sdpworkspace/sdpinstall/sdpchameleon/build/runtime* <br>By this task, the logs are centralized to *sdpworkspace/.log/chameleon* |
+| Task | startch   | Starts the chameleon from *sdpworkspace/sdpconfig/sdpchameleon/build/runtime* <br>By this task, the logs are centralized to *sdpworkspace/.log/chameleon* |
 | Task | stopch    | Stops chameleon                                                                                                                                            |
-| Task | deploych  | Deploys chameleon to *sdpworkspace/sdpinstall/sdpchameleon/build/runtime*                                                                                  |
+| Task | deploych  | Deploys chameleon to *sdpworkspace/sdpconfig/sdpchameleon/build/runtime*                                                                                  |
 | Task | ~~clean~~ | Disables this task to prevent the deployed runtime being deleted                                                                                           |
 
 ### sdp-jboss
@@ -141,3 +161,5 @@ library []()
 | Task | startsim  | Starts sdpsimulators                                             |
 | Task | stopsim   | Stops sdpsimulators                                              |
 | Task | ~~clean~~ | Disables this task to prevent the deployed runtime being deleted |
+
+
