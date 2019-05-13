@@ -157,14 +157,14 @@ distributions. As list is the plugins that *txm-addition* gives
 assistance to, the conventional source sets, and the locations where the
 contents of ZIP files are assembled into.
 
-| Source Set                 | Plugin          | Directory in ZIP       | Lifecycle Task Install                                                                                    |
-|:---------------------------|:----------------|:-----------------------|:----------------------------------------------------------------------------------------------------------|
-| src/extension/sqlscripts   | *txm-database*  | ddl                    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/database/DDL/sqlscripts |
-| src/extension/sqlscripts   | *txm-database*  | dml                    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/database/DML/sqlscripts |
-| src/extension/install      | *txm-install*   | extension/install      | the contents of ZIP files are assembled into server distribution <br> sdpassembly/install                 |
-| src/extension/installjboss | *txm-install*   | extension/installjboss | the contents of ZIP files are assembled into server distribution <br> sdpassembly/installjboss            |
-| src/extension/installwas   | *txm-install*   | extension/installwas   | the contents of ZIP files are assembled into server distribution <br> sdpassembly/installwas              |
-| src/extension/chameleon    | *sdp-chameleon* | extension/chameleon    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/chameleon               |
+| Source Set                 | Plugin          | Directory in ZIP file  | Directory in server distribution after task *install* |
+|:---------------------------|:----------------|:-----------------------|:------------------------------------------------------|
+| src/extension/sqlscripts   | *txm-database*  | ddl                    | sdpassembly/database/DDL/sqlscripts                   |
+| src/extension/sqlscripts   | *txm-database*  | dml                    | sdpassembly/database/DML/sqlscripts                   |
+| src/extension/install      | *txm-install*   | extension/install      | sdpassembly/install                                   |
+| src/extension/installjboss | *txm-install*   | extension/installjboss | sdpassembly/installjboss                              |
+| src/extension/installwas   | *txm-install*   | extension/installwas   | sdpassembly/installwas                                |
+| src/extension/chameleon    | *sdp-chameleon* | extension/chameleon    | sdpassembly/chameleon                                 |
 
 ### txm-database
 
