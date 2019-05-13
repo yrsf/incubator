@@ -111,10 +111,10 @@ Fragments which associate with the Web Services Application of Operation
 
 *txm-ocm-wf* extended and modified the following tasks.
 
-| Type | Name    | Provider               | Description                                                                               |
-|:-----|:--------|:-----------------------|:------------------------------------------------------------------------------------------|
-| Task | build   | *java*                 | assembles the source sets into application JAR files                                      |
-| Task | install | *txm-server-assembly*  | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/ocm.war/WEB-INFO/lib |
+| Type | Name    | Provider              | Description                                                                                           |
+|:-----|:--------|:----------------------|:------------------------------------------------------------------------------------------------------|
+| Task | build   | *java*                | assembles the source sets into application JAR files                                                  |
+| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/ocm.war/WEB-INFO/lib |
   
 The modules that apply *txm-ocm-wf* must have the name suffix '-ocm-wf'.
   
@@ -171,15 +171,18 @@ contents of ZIP files are assembled into.
 *txm-database* extends *txm-addition* to build database scripts that
 attached to the following sqlscripts source set into ZIP files. 
 
+> src/extension/sqlscripts
+
 *txm-database* extended and modified the following tasks.
 
-| Type | Name    | Provider              | Description                                                                                                                                    |
-|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Task | build   | *txm-addition*        | assembles the source set *src/extension/sqlscripts* into application ZIP files                                                                 |
-| Task | install | *txm-server-assembly* | assembles the contents of ZIP files into server distribution <br> sdpassembly/database/DDL/sqlscripts <br> sdpassembly/database/DML/sqlscripts |
+| Type | Name    | Provider              | Description                                                                                                                                                                                                                                                |
+|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Task | build   | *txm-addition*        | If module name ends with 'ddl', assembles the source set *src/extension/sqlscripts* into dir 'ddl' in application ZIP file <br> If module name ends with 'dml', assembles the source set *src/extension/sqlscripts* into dir 'dml' in application ZIP file |
+| Task | install | *txm-server-assembly* | assembles the contents of ZIP files into server distribution <br> sdpassembly/database/DDL/sqlscripts <br> sdpassembly/database/DML/sqlscripts                                                                                                             |
 
 The modules that apply *txm-database* must have the name suffix '-ddl'
-or '-dml', which depends on the type of database scripts.
+or '-dml'. If the module is DDL specific, use '-ddl'; whereas is DML
+specific, use '-dml'.
 
 *txm-database* must work with *txm-install*. Since the module that
 applies *txm-database* would not be added to the following order files
