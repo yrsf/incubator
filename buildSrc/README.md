@@ -253,13 +253,13 @@ applied to the subproject ':sdpclientassembly'.
 
 *txm-sc-assembly* provided the following tasks and configurations.
 
-| Type          | Name               | Description                                                                                                              |
-|:--------------|:-------------------|:-------------------------------------------------------------------------------------------------------------------------|
-| Configuration | smartClientRuntime | specifies which modules are to be assembled into client distribution.                                                    |
-| Task          | install            | assembles the modules that are with configuration *smartClientRuntime* into client distributions, such as devkit and msi |
-| Property      | msiWixToolsetDir   |                                                                                                                          |
-| Property      | msiWixCandleArgs   |                                                                                                                          |
-| Property      | msiWixMatching     |                                                                                                                          |
+| Type          | Name               | Description                                                                                                                                                                                               |
+|:--------------|:-------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Configuration | smartClientRuntime | specifies which modules are to be assembled into client distribution.                                                                                                                                     |
+| Task          | install            | assembles the modules that are with configuration *smartClientRuntime* into client distributions, such as devkit and msi                                                                                  |
+| Property      | msiWixToolsetDir   | specifies the directory that Wix is installed. If this is not properly set, the smartclient setup of MSI would be skipped. This could be exploited to skip MSI setup for reducing server build time.      |
+| Property      | msiWixCandleArgs   | specifies the arguments of executable candle application. This is SDP customized as MvDetect.exe is unexpectedly deleted by virus protection software in the pipeline node of Windows platform.           |
+| Property      | msiWixMatching     | specifies the fileset that skips the operation of file mode change. This is SDP customized as MvDetect.exe is unexpectedly deleted by virus protection software in the pipeline node of Windows platform. |
 
 As shown below is the output of task *install* (client distributions).
 
@@ -280,8 +280,8 @@ As shown below is the output of task *install* (client distributions).
 [Publishing Plugin](https://docs.gradle.org/current/userguide/publishing_overview.html)
 to upload artifacts. 
 
-For TXM plugins, visit [Knowledge Base](go/tm2kb), select version and
-search operator manual for more details.
+For more details about TXM plugins, visit [Knowledge Base](go/tm2kb),
+select version and search operator manual.
 
 ## Custom Plugin
 
