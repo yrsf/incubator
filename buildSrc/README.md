@@ -3,7 +3,7 @@
 ## TXM Plugin
 
 TXM supplies several plugins to package up reusable pieces of build
-logic, which can be used across many different projects and builds. It
+logic, which is used across many different projects and builds. It
 is imperative to comprehend the usages of these plugins from the
 perspective of gradle lifecycle tasks.
  
@@ -17,28 +17,30 @@ perspective of gradle lifecycle tasks.
   executable application and other supporting files, such as EAR and
   database scripts.
 
-In TXM, plugin *txm-server-assembly* and plugin *txm-sc-assembly*
-expand the task *install* to assemble server distribution and client
+In TXM, plugin *txm-server-assembly* and plugin *txm-sc-assembly* expand
+the task *install* to assemble server distribution and client
 distribution respectively; whereas other plugins expand the task *build*
-to assemble archives that serve as component.
-
-Search OperatorManual_Devkit at [Knowledge Base](go/tm2kb) for more
-details about TXM plugins.
+to assemble archives that serve as components.
 
 ### txm-lib
 
 *txm-lib* extends the
 [Java Plugin](https://docs.gradle.org/current/userguide/java_plugin.html)
-to build JVM-based projects. With TXM assembly plugins, the build output
-can be assembled into server distribution and client distribution.
+to build JVM-based projects. With the assistance of TXM assembly plugins
+*txm-server-assembly* and *txm-sc-assembly*, the output of build are
+assembled into server distribution and client distribution respectively.
+
+The default source set is
+
+> src/main/java
 
 *txm-lib* extended and modified the following tasks.
 
-| Type | Name    | Provider              | Description                                                                   |
-|:-----|:--------|:----------------------|:------------------------------------------------------------------------------|
-| Task | build   | *java*                | assembles the source sets into application JAR files                          |
-| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> txm-server.ear/lib      |
-| Task | install | *txm-sc-assembly*     | assembles the JAR files build output into client distribution <br> c:/pce/lib |
+| Type | Name    | Provider              | Description                                                                       |
+|:-----|:--------|:----------------------|:----------------------------------------------------------------------------------|
+| Task | build   | *java*                | assembles the source sets into application JAR files                              |
+| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/lib          |
+| Task | install | *txm-sc-assembly*     | assembles the JAR files build output into client distribution <br> %PCE_HOME%/lib |
 
 You can find a comprehensive introduction and overview to the Java
 plugin at
@@ -46,117 +48,173 @@ plugin at
 
 ### txm-rar
 
-*txm-rar* builds projects with resource adapters, which provides
-communication between a Java EE application and an Enterprise
-Information System using the Java Connector Architecture specification.
-With TXM assembly plugins, the build output can be assembled into TXM
-server distribution.
+*txm-rar* extends *txm-lib* to build modules with resource adapters,
+which provides communication between a Java EE application and an
+Enterprise Information System using the Java Connector Architecture
+specification. 
 
 *txm-rar* extended and modified the following tasks.
 
-| Type | Name    | Provider              | Description                                                            |
-|:-----|:--------|:----------------------|:-----------------------------------------------------------------------|
-| Task | build   | *txm-rar*             | assembles the source sets into application RAR files                   |
-| Task | install | *txm-server-assembly* | assembles the RAR files into server distribution <br> txm-server.ear/  |
+| Type       | Name    | Provider              | Description                                                           |
+|:-----------|:--------|:----------------------|:----------------------------------------------------------------------|
+| Task       | build   | *txm-rar*             | assembles the source sets into application RAR files                  |
+| Task       | install | *txm-server-assembly* | assembles the RAR files into server distribution <br> sdpassembly/txm-server.ear/ |
+
+The modules that apply *txm-rar* must have the name suffix '-rar'.
 
 ### txm-ejb
 
-*txm-ejb* extends *txm-lib* to build projects with EJB modules, which is
+*txm-ejb* extends *txm-lib* to build modules with EJB modules, which is
 an API for developing distributed, transactional, secure and portable
-Java EE applications. With TXM assembly plugins, the build output can be
-assembled into server distribution.
+Java EE applications. 
 
 *txm-ejb* extended and modified the following tasks.
 
-| Type | Name    | Provider              | Description                                                          |
-|:-----|:--------|:----------------------|:---------------------------------------------------------------------|
-| Task | build   | *java*                | assembles the source sets into application JAR files                 |
-| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> txm-server.ear |
+| Type | Name    | Provider              | Description                                                           |
+|:-----|:--------|:----------------------|:----------------------------------------------------------------------|
+| Task | build   | *java*                | assembles the source sets into application JAR files                  |
+| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/ |
+
+The modules that apply *txm-ejb* must have the name suffix '-ejb'.
 
 ### txm-ocm-ejb
 
-Similarly, *txm-ocm-ejb* extends *txm-ejb* to build projects with EJB
+Similarly, *txm-ocm-ejb* extends *txm-ejb* to build modules with EJB
 modules which associate with the Web Services Application of Operation &
 Control Manager(OCM).
 
+The modules that apply *txm-ocm-ejb* must have the name suffix
+'-ocm-ejb'.
+
 ### txm-wf
 
-*txm-wf* extends *txm-lib* to build projects with Web Fragments, which
+*txm-wf* extends *txm-lib* to build modules with Web Fragments, which
 modularize deployment descriptors to enables web frameworks to
 self-register to the web container. This plugin is applied to the
 projects that associate with the Web Services Application of SmartClient
-Connector(SCC). With TXM assembly plugins, the build output can be
-assembled into server distribution.
+Connector(SCC). 
 
 *txm-wf* extended and modified the following tasks.
 
 | Type | Name    | Provider              | Description                                                                               |
 |:-----|:--------|:----------------------|:------------------------------------------------------------------------------------------|
 | Task | build   | *java*                | assembles the source sets into application JAR files                                      |
-| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> txm-server.ear/scc.war/WEB-INFO/lib |
+| Task | install | *txm-server-assembly* | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/scc.war/WEB-INFO/lib |
+
+The modules that apply *txm-wf* must have the name suffix '-scc-wf'.
 
 ### txm-ocm-wf
 
-Similarly, *txm-ocm-wf* extends *txm-wf* to build projects with Web
+Similarly, *txm-ocm-wf* extends *txm-wf* to build modules with Web
 Fragments which associate with the Web Services Application of Operation
 & Control Manager(OCM).
 
-*txm-wf* extended and modified the following tasks.
+*txm-ocm-wf* extended and modified the following tasks.
 
 | Type | Name    | Provider               | Description                                                                               |
 |:-----|:--------|:-----------------------|:------------------------------------------------------------------------------------------|
 | Task | build   | *java*                 | assembles the source sets into application JAR files                                      |
-| Task | install | *txm-server-assembly*  | assembles the JAR files into server distribution <br> txm-server.ear/ocm.war/WEB-INFO/lib |
+| Task | install | *txm-server-assembly*  | assembles the JAR files into server distribution <br> sdpassembly/txm-server.ear/ocm.war/WEB-INFO/lib |
+  
+The modules that apply *txm-ocm-wf* must have the name suffix '-ocm-wf'.
   
 ### txm-skinny-war
 
-*txm-skinny-war* extends the Java plugin to build projects. With TXM
-assembly plugins, the build output(JAR files) can be assembled into
+*txm-skinny-war* extends the Java plugin to build modules. With TXM
+assembly plugins, the output of build(JAR files) are assembled into
 server distribution as web application WAR archive.
 
 *txm-skinny-war* extended and modified the following tasks.
 
-| Type          | Name     | Provider              | Description                                                                             |
-|:--------------|:---------|:----------------------|:----------------------------------------------------------------------------------------|
-| Task          | build    | *jar*                 | assembles the source sets into application JAR files                                    |
-| Task          | install  | *txm-server-assembly* | assembles the JAR files as a WAR archive into server distribution <br> txm-server.ear/  |
-| Configuration | archives | *txm-server-assembly* | declares explicitly that the JAR files of build output should be archived as a WAR file |
+| Type          | Name     | Provider              | Description                                                                                        |
+|:--------------|:---------|:----------------------|:---------------------------------------------------------------------------------------------------|
+| Task          | build    | *jar*                 | assembles the source sets into application JAR files                                               |
+| Task          | install  | *txm-server-assembly* | assembles the JAR files as a WAR archive into server distribution <br> sdpassembly/txm-server.ear/ |
+| Configuration | archives | *txm-server-assembly* | declares explicitly that the JAR files of build output should be archived as a WAR file            |
 
 The default Gradle
 [War Plugin](https://docs.gradle.org/current/userguide/war_plugin.html)
 disables the default JAR archive generation of the Java plugin and adds
-a default WAR archive task. Unlikely, *txm-skinny-war* uses the
-default JAR archive generation of the Java plugin, and adds the
-configuration *archives* to explicitly declare that the JAR archives
-should be assembled into WAR.
+a default WAR archive task. Unlikely, *txm-skinny-war* uses the default
+JAR archive generation of the Java plugin. When *txm-server-assembly*
+assemble the modules with *txm-skinny-war*, the configuration *archives*
+explicitly declares that the JAR archives should be assembled into WAR.
+
+The modules that apply *txm-skinny-war* must have the name suffix
+'-webapp'.
+
+### txm-addition
+
+*txm-addition* is an utility plugin to archive the source sets into ZIP
+files. *txm-addition* extended and modified the following task.
+
+| Type | Name    | Provider              | Description                                                                         |
+|:-----|:--------|:----------------------|:------------------------------------------------------------------------------------|
+| Task | build   | *txm-addition*        | assembles the source sets into application ZIP files                                |
+
+*txm-addition* is used by other plugins for dropping files into
+distributions. As list is the plugins that *txm-addition* gives
+assistance to, the conventional source sets, and the locations where the
+contents of ZIP files are assembled into.
+
+| Source Set                 | Plugin          | Directory in ZIP       | Lifecycle Task Install                                                                                    |
+|:---------------------------|:----------------|:-----------------------|:----------------------------------------------------------------------------------------------------------|
+| src/extension/sqlscripts   | *txm-database*  | ddl                    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/database/DDL/sqlscripts |
+| src/extension/sqlscripts   | *txm-database*  | dml                    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/database/DML/sqlscripts |
+| src/extension/install      | *txm-install*   | extension/install      | the contents of ZIP files are assembled into server distribution <br> sdpassembly/install                 |
+| src/extension/installjboss | *txm-install*   | extension/installjboss | the contents of ZIP files are assembled into server distribution <br> sdpassembly/installjboss            |
+| src/extension/installwas   | *txm-install*   | extension/installwas   | the contents of ZIP files are assembled into server distribution <br> sdpassembly/installwas              |
+| src/extension/chameleon    | *sdp-chameleon* | extension/chameleon    | the contents of ZIP files are assembled into server distribution <br> sdpassembly/chameleon               |
 
 ### txm-database
 
-*txm-database* builds database scripts that attached to the main source
-set, including DDL and DML, into ZIP files. With TXM assembly plugins,
-the build output can be assembled into server distribution.
+*txm-database* extends *txm-addition* to build database scripts that
+attached to the following sqlscripts source set into ZIP files. 
 
-| Type | Name    | Provider              | Description                                                                                                                              |
-|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| Task | build   | *txm-database*        | assembles the source sets into application ZIP files                                                                                     |
-| Task | install | *txm-server-assembly* | assembles the ZIP files into server distribution <br> txm-server.ear/database/DDL/sqlscripts <br> txm-server.ear/database/DML/sqlscripts |
+*txm-database* extended and modified the following tasks.
+
+| Type | Name    | Provider              | Description                                                                                                                                    |
+|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Task | build   | *txm-addition*        | assembles the source set *src/extension/sqlscripts* into application ZIP files                                                                 |
+| Task | install | *txm-server-assembly* | assembles the contents of ZIP files into server distribution <br> sdpassembly/database/DDL/sqlscripts <br> sdpassembly/database/DML/sqlscripts |
+
+The modules that apply *txm-database* must have the name suffix '-ddl'
+or '-dml', which depends on the type of database scripts.
+
+*txm-database* must work with *txm-install*. Since the module that
+applies *txm-database* would not be added to the following order files
+without *txm-install*.
+
+> sdpassembly/database/DDL/sqlscripts/ddl.order
+
+> sdpassembly/database/DML/sqlscripts/dml.order
+
+Consequently and unexpectedly, the execution of that module's scripts is
+skipped.
 
 ### txm-install
 
-*txm-install* builds install scripts that attached to the main source
-set, including scripts of various application servers, into ZIP files.
-With TXM assembly plugins, the build output can be assembled into server
-distribution.
+*txm-install* extends *txm-addition* to build application deployment
+scripts that attached to the following source sets into ZIP files.
 
-| Type | Name    | Provider              | Description                                                                                                      |
-|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------------|
-| Task | build   | *txm-install*         | assembles the source sets into application ZIP files                                                             |
-| Task | install | *txm-server-assembly* | assembles the ZIP files into server distribution <br> txm-server.ear/installjboss <br> txm-server.ear/installwas |
+> src/extension/install 
+
+> src/extension/installjboss
+
+> src/extension/installwas
+
+*txm-install* extended and modified the following tasks.
+
+| Type | Name    | Provider              | Description                                                                                                |
+|:-----|:--------|:----------------------|:-----------------------------------------------------------------------------------------------------------|
+| Task | build   | *txm-addition*        | assembles the source sets into application ZIP files                                                       |
+| Task | install | *txm-server-assembly* | assembles the ZIP files into server distribution <br> sdpassembly/installjboss <br> sdpassembly/installwas |
 
 ### txm-server-assembly
 
-*txm-server-assembly* collects the build outputs of all server modules,
-and assembles them into server distribution.
+*txm-server-assembly* collects the output of builds for all server
+modules, and assembles them into server distribution. In SDP, this
+plugin is applied to the subproject ':sdpassembly'.
 
 *txm-server-assembly* provided the following tasks and configurations.
   
@@ -164,10 +222,9 @@ and assembles them into server distribution.
 |:--------------|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Configuration | serverRuntime | specifies which modules' build outputs are to be assembled into the deployable EAR                                                                                               |
 | Configuration | includedDist  | specifies which modules' build outputs are to be dropped into server distribution                                                                                                |
-| Task          | install       | assembles the modules that are with configuration *serverRuntime* into txm-server.ear, and drops the modules that are with configuration *includedDist* into server distribution |
+| Task          | install       | assembles the modules that are with configuration *serverRuntime* into sdpassembly/txm-server.ear <br> drops the modules that are with configuration *includedDist* into sdpassembly/ |
 
-In SDP this plugin is applied to the project *sdpassembly*. As shown
-below is the output of task *install* (server distributions).
+As shown below is the output of task *install* (server distributions).
 
 ```bash
 -- sdpworkspace
@@ -187,21 +244,21 @@ below is the output of task *install* (server distributions).
     
 ### txm-sc-assembly
 
-*txm-sc-assembly* collects the build outputs of all client modules, and
-assembles them into client distribution.
+*txm-sc-assembly* collects the output of builds of all client modules,
+and assembles them into client distribution. In SDP, this plugin is
+applied to the subproject ':sdpclientassembly'.
 
 *txm-sc-assembly* provided the following tasks and configurations.
 
 | Type          | Name               | Description                                                                                                              |
 |:--------------|:-------------------|:-------------------------------------------------------------------------------------------------------------------------|
-| Task          | install            | assembles the modules that are with configuration *smartClientRuntime* into client distributions, such as devkit and msi |
 | Configuration | smartClientRuntime | specifies which modules are to be assembled into client distribution.                                                    |
+| Task          | install            | assembles the modules that are with configuration *smartClientRuntime* into client distributions, such as devkit and msi |
 | Property      | msiWixToolsetDir   |                                                                                                                          |
 | Property      | msiWixCandleArgs   |                                                                                                                          |
 | Property      | msiWixMatching     |                                                                                                                          |
 
-In SDP this plugin is applied to the project *sdpclientassembly*. As
-shown below is the output of task *install* (client distributions).
+As shown below is the output of task *install* (client distributions).
 
 ```bash
 -- sdpworkspace
@@ -219,6 +276,9 @@ shown below is the output of task *install* (client distributions).
 *txm-publish* extends the
 [Publishing Plugin](https://docs.gradle.org/current/userguide/publishing_overview.html)
 to upload artifacts. 
+
+For TXM plugins, visit [Knowledge Base](go/tm2kb), select version and
+search operator manual for more details.
 
 ## Custom Plugin
 
@@ -293,7 +353,7 @@ properties for customizing.
 | Task | startjb    | Starts jboss instance from <br>*sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/run.cmd* with environment variables in jbossoptions.orig loaded <br>By this task, jboss logs are centralized to *sdpworkspace/.log/jboss*; whereas txm logs are centralized to *sdpworkspace/.log/server*                                |
 | Task | stopjb     | Stops the started jboss instance                                                                                                                                                                                                                                                                                                         |
 | Task | optimizejb | Changes start options of jboss instance before deploy                                                                                                                                                                                                                                                                                    |
-| Task | deployjb   | Resets *JBOSS_HOME/standalone/deployments* and *JBOSS_HOME/configuration/standalone-full.xml* <br>Runs customized scripts from *sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/customize.cmd* <br>Explodes *sdpworkspace/sdpassembly/build/install/sdpassembly/txm-server.ear* into *JBOSS_HOME/standalone/deployments* |
+| Task | deployjb   | Resets *JBOSS_HOME/standalone/deployments* and *JBOSS_HOME/configuration/standalone-full.xml* <br>Runs customized scripts from *sdpworkspace/sdpassembly/build/install/sdpassembly/installjboss/customize.cmd* <br>Explodes *sdpworkspace/sdpassembly/build/install/sdpassembly/sdpassembly/txm-server.ear* into *JBOSS_HOME/standalone/deployments* |
 
 ### sdp-smartclient
 
